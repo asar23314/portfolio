@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" 
+          content="default-src 'self'; 
+                  script-src 'self' https://cdn.jsdelivr.net https://unpkg.com;
+                  style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com;
+                  font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+                  img-src 'self' data: https:;">
     <title>Asar Khan | Senior IT Infrastructure & Cybersecurity Expert</title>
     
     <!-- Favicon -->
@@ -1017,21 +1023,25 @@
             background: var(--primary);
         }
         
-        /* Print-friendly styles */
+        /* Print-friendly styles - UPDATED AS REQUESTED */
         @media print {
             .no-print {
                 display: none !important;
             }
             
-            section {
-                padding: 40px 0 !important;
+            body { 
+                font-size: 12pt; 
             }
             
-            .card-elegant {
-                box-shadow: none !important;
-                border: 1px solid #ddd !important;
+            .card-elegant { 
                 break-inside: avoid;
                 page-break-inside: avoid;
+                box-shadow: none !important;
+                border: 1px solid #ddd !important;
+            }
+            
+            section {
+                padding: 40px 0 !important;
             }
             
             .navbar, footer, .social-links, .current-projects {
@@ -1043,11 +1053,6 @@
                 font-size: 0.9em;
                 font-weight: normal;
                 color: var(--text-light);
-            }
-            
-            body {
-                font-size: 12pt;
-                line-height: 1.5;
             }
             
             h1 { font-size: 24pt; }
