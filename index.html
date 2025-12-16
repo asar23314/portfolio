@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" 
-          content="default-src 'self'; 
-                  script-src 'self' https://cdn.jsdelivr.net https://unpkg.com;
-                  style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com;
-                  font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
-                  img-src 'self' data: https:;">
     <title>Asar Khan | Senior IT Infrastructure & Cybersecurity Expert</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>">
+    
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" 
+          content="default-src 'self'; 
+                   script-src 'self' https://cdn.jsdelivr.net https://unpkg.com;
+                   style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com;
+                   font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+                   img-src 'self' data: https:;">
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Asar Khan - Senior IT Infrastructure & Cybersecurity Expert with 13+ years experience in network design, security implementation, and IT team leadership.">
@@ -194,25 +196,25 @@
         /* FIXED NAVIGATION ALIGNMENT */
         .navbar-nav {
             display: flex;
-            align-items: center; /* This ensures all nav items are vertically centered */
+            align-items: center;
         }
         
         .nav-item {
             display: flex;
-            align-items: center; /* Ensures each nav item aligns properly */
-            height: 100%; /* Makes sure all items take full height */
+            align-items: center;
+            height: 100%;
         }
         
         .nav-link {
             color: var(--text-medium) !important;
             font-weight: 500;
-            padding: 12px 20px !important; /* Increased padding for better touch */
+            padding: 12px 20px !important;
             border-radius: 8px;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            height: 100%; /* Ensures consistent height */
-            white-space: nowrap; /* Prevents text wrapping */
+            height: 100%;
+            white-space: nowrap;
         }
         
         .nav-link:hover,
@@ -927,7 +929,7 @@
             }
             
             .profile-container {
-                order: -1; /* Moves image above text on mobile */
+                order: -1;
             }
             
             .hero-btns .me-3, .hero-btns .ms-2 {
@@ -1023,25 +1025,21 @@
             background: var(--primary);
         }
         
-        /* Print-friendly styles - UPDATED AS REQUESTED */
+        /* Print-friendly styles */
         @media print {
             .no-print {
                 display: none !important;
             }
             
-            body { 
-                font-size: 12pt; 
-            }
-            
-            .card-elegant { 
-                break-inside: avoid;
-                page-break-inside: avoid;
-                box-shadow: none !important;
-                border: 1px solid #ddd !important;
-            }
-            
             section {
                 padding: 40px 0 !important;
+            }
+            
+            .card-elegant {
+                box-shadow: none !important;
+                border: 1px solid #ddd !important;
+                break-inside: avoid;
+                page-break-inside: avoid;
             }
             
             .navbar, footer, .social-links, .current-projects {
@@ -1053,6 +1051,11 @@
                 font-size: 0.9em;
                 font-weight: normal;
                 color: var(--text-light);
+            }
+            
+            body {
+                font-size: 12pt;
+                line-height: 1.5;
             }
             
             h1 { font-size: 24pt; }
@@ -1242,8 +1245,12 @@
                         <div class="profile-container">
                             <div class="profile-card floating">
                                 <div class="profile-placeholder">
-                                    <!-- Add loading="lazy" for performance - REPLACED IMAGE NAME -->
-                                    <img src="./unnamed (3).jpg" alt="Asar Khan - Senior IT Infrastructure & Cybersecurity Expert" class="profile-image image-loading" loading="lazy" onload="this.classList.remove('image-loading')">
+                                    <!-- Fixed Image Source -->
+                                    <img src="https://via.placeholder.com/350x350/2563eb/ffffff?text=AK" 
+                                         alt="Asar Khan - Senior IT Infrastructure & Cybersecurity Expert" 
+                                         class="profile-image image-loading" 
+                                         loading="lazy" 
+                                         onload="this.classList.remove('image-loading')">
                                 </div>
                             </div>
                             <div class="text-center mt-4">
@@ -1529,12 +1536,12 @@
     <!-- Experience Section -->
     <section id="experience">
         <div class="container">
-            <h2 class="section-title text-center" data-aos="fade-up">Work Experience (2012 - 2025)</h2>
+            <h2 class="section-title text-center" data-aos="fade-up">Work Experience (2012 - Present)</h2>
             
             <div class="timeline">
-                <!-- Current Role -->
+                <!-- Current Role - DATE FIXED -->
                 <div class="timeline-item" data-aos="fade-right" data-aos-duration="800">
-                    <div class="timeline-date">April 2025 – Present</div>
+                    <div class="timeline-date">April 2024 – Present</div>
                     <div class="card-elegant">
                         <div class="d-flex justify-content-between align-items-start mb-3">
                             <div>
@@ -1558,7 +1565,7 @@
                 
                 <!-- Technical Supervisor - UPDATED DATES -->
                 <div class="timeline-item" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
-                    <div class="timeline-date">Nov 2023 – Apr 2025</div>
+                    <div class="timeline-date">Nov 2023 – Mar 2024</div>
                     <div class="card-elegant">
                         <h4 class="mb-1">Technical Supervisor</h4>
                         <p class="text-primary mb-3">Setaragan Mutahed</p>
@@ -1987,16 +1994,12 @@
                         <!-- Social Links - FIXED CENTERING (Connect With Me heading and Send Email icon removed) -->
                         <div class="text-center mt-5 pt-4 border-top">
                             <div class="social-links">
-                                <!-- Update LinkedIn URL with your actual profile -->
-                                <a href="https://www.linkedin.com/in/asarkhan-afg/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn Profile" aria-label="LinkedIn profile">
+                                <!-- LinkedIn link - UPDATE WITH YOUR ACTUAL URL -->
+                                <a href="https://www.linkedin.com/in/your-profile-here/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn Profile" aria-label="LinkedIn profile">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
-                                <a href="#" class="social-link" title="Twitter Profile" aria-label="Twitter profile">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#" class="social-link" title="GitHub Profile" aria-label="GitHub profile">
-                                    <i class="fab fa-github"></i>
-                                </a>
+                                <!-- Twitter link removed since not provided -->
+                                <!-- GitHub link removed since not provided -->
                             </div>
                         </div>
                     </div>
@@ -2018,21 +2021,15 @@
                 <div class="col-lg-6">
                     <div class="text-lg-end">
                         <div class="social-links justify-content-lg-end">
-                            <a href="https://www.linkedin.com/in/asarkhan-afg/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                            <a href="https://www.linkedin.com/in/your-profile-here/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
                                 <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" class="social-link" aria-label="Twitter">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="social-link" aria-label="GitHub">
-                                <i class="fab fa-github"></i>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="text-center mt-5 pt-4 border-top border-white border-opacity-25">
-                <p class="mb-0">© 2025 Asar Khan. All Rights Reserved.</p>
+                <p class="mb-0">© 2024 Asar Khan. All Rights Reserved.</p>
                 <p class="mt-2 text-white text-opacity-75" style="font-size: 0.9rem;">
                     <span id="visitor-count">0</span> visitors
                 </p>
@@ -2054,7 +2051,7 @@
                         <div>
                             <h4 class="mb-1">IT Manager</h4>
                             <p class="text-primary mb-0">Moraa Educational Complex</p>
-                            <p class="text-muted mb-0"><small>April 2025 – Present</small></p>
+                            <p class="text-muted mb-0"><small>April 2024 – Present</small></p>
                         </div>
                         <span class="badge bg-primary bg-gradient">Current</span>
                     </div>
@@ -2107,7 +2104,7 @@
                 <div class="modal-body">
                     <h4 class="mb-1">Technical Supervisor</h4>
                     <p class="text-primary mb-3">Setaragan Mutahed</p>
-                    <p class="text-muted mb-3"><small>November 2023 – April 2025</small></p>
+                    <p class="text-muted mb-3"><small>November 2023 – March 2024</small></p>
                     
                     <p><strong>Job Purpose:</strong> Oversee all technical aspects of Electronic Money Institution project including infrastructure, security, and compliance.</p>
                     
