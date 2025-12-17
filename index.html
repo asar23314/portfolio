@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" 
           content="default-src 'self'; 
-                  script-src 'self' https://cdn.jsdelivr.net https://unpkg.com;
-                  style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com;
+                  script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://unpkg.com;
+                  style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com;
                   font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
                   img-src 'self' data: https:;">
     <title>Asar Khan | Senior IT Infrastructure & Cybersecurity Expert</title>
@@ -83,6 +83,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
+        /* Critical CSS - All styles inline to prevent loading issues */
         :root {
             --primary: #0f172a;
             --primary-light: #1e293b;
