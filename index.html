@@ -67,16 +67,1090 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     
     <!-- AOS Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --dark-color: #1f2937;
+            --light-color: #f9fafb;
+            --text-color: #374151;
+            --light-text: #6b7280;
+            --success-color: #10b981;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background-color: white !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+        
+        .navbar-brand, .nav-link {
+            color: var(--dark-color) !important;
+            font-weight: 500;
+        }
+        
+        .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 50px;
+            position: relative;
+            color: var(--dark-color);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+        
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+        }
+        
+        .skill-item {
+            margin-bottom: 20px;
+        }
+        
+        .skill-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .skill-progress {
+            height: 10px;
+            background-color: #e5e7eb;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .skill-bar {
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 5px;
+            width: 0;
+            transition: width 1.5s ease;
+        }
+        
+        .contact-item {
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 0;
+        }
+        
+        .profile-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .project-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .stats-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            display: none;
+        }
+        
+        .visitor-counter {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            z-index: 1000;
+        }
+        
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        
+        .skip-to-content:focus {
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Asar Khan</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6 hero-content">
+                    <h1 class="display-4 fw-bold mb-4 animate__animated animate__fadeInUp">Asar Khan</h1>
+                    <h2 class="h3 mb-4 animate__animated animate__fadeInUp animate__delay-1s">Senior IT Infrastructure & Cybersecurity Expert</h2>
+                    <p class="lead mb-5 animate__animated animate__fadeInUp animate__delay-2s">With 13+ years of experience in optimizing infrastructure, enhancing security, and ensuring seamless operations. Proven leader in network design and IT team management.</p>
+                    
+                    <div class="row mb-5 animate__animated animate__fadeInUp animate__delay-3s">
+                        <div class="col-4">
+                            <div class="stats-card bg-white text-dark">
+                                <div class="stats-number">13+</div>
+                                <div>Years Experience</div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stats-card bg-white text-dark">
+                                <div class="stats-number">50+</div>
+                                <div>Projects</div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stats-card bg-white text-dark">
+                                <div class="stats-number">10+</div>
+                                <div>Certifications</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex flex-wrap gap-3 animate__animated animate__fadeInUp animate__delay-4s">
+                        <a href="#contact" class="btn btn-light btn-lg">Contact Me</a>
+                        <a href="#projects" class="btn btn-outline-light btn-lg">View Projects</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="profile-card floating animate__animated animate__fadeInRight">
+                        <img src="https://picsum.photos/seed/asarkhan/600/600.jpg" alt="Asar Khan" class="img-fluid">
+                        <div class="p-4">
+                            <h3 class="h5 mb-2">Asar Khan - Senior IT Infrastructure & Cybersecurity Expert</h3>
+                            <div class="badge bg-success">Available for Opportunities</div>
+                            <p class="mt-2">Open to senior IT infrastructure and cybersecurity roles</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card p-4 mb-4" data-aos="fade-up">
+                        <h3 class="h4 mb-3">Professional Summary</h3>
+                        <p><strong>Objective:</strong> Experienced IT professional with over 13 years of expertise in optimizing infrastructure, enhancing security, and ensuring seamless operations. Proven record in network design, troubleshooting, disaster recovery planning, and IT team leadership.</p>
+                        <p><strong>Summary:</strong> Skilled IT professional with expertise in network infrastructure, server management, and cybersecurity across Windows and Linux environments. Proficient in DNS, DHCP, firewalls, VPNs, virtualization, and backup solutions like Veeam.</p>
+                    </div>
+                    
+                    <div class="card p-4" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="h4 mb-3">Career Aspirations</h3>
+                        <p>Continue advancing in IT infrastructure and cybersecurity. Leverage extensive experience for challenging projects and leadership roles.</p>
+                        <ul>
+                            <li>Drive innovation and implement cutting-edge solutions</li>
+                            <li>Develop comprehensive security strategies</li>
+                            <li>Optimize network performance</li>
+                            <li>Contribute to organizational success</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section id="education" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Education & Certifications</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="card p-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h3 class="h4">Certified Project Management Professional</h3>
+                            <span class="badge bg-primary">2013</span>
+                        </div>
+                        <p class="mb-1"><strong>USAID</strong> Kabul, Afghanistan</p>
+                        <p>Advanced project management methodologies and strategic planning certification</p>
+                        <div class="mt-2">
+                            <span class="badge bg-light text-dark">Project Management</span>
+                            <span class="badge bg-light text-dark">Strategic Planning</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card p-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h3 class="h4">Bachelor of Science in Information Technology</h3>
+                            <span class="badge bg-primary">2009</span>
+                        </div>
+                        <p class="mb-1"><strong>Siliguri Institute of Technology</strong> Siliguri, India</p>
+                        <p>Comprehensive IT education covering software development, networking, and systems administration</p>
+                        <div class="mt-2">
+                            <span class="badge bg-light text-dark">Network Infrastructure</span>
+                            <span class="badge bg-light text-dark">Systems Administration</span>
+                            <span class="badge bg-light text-dark">Software Engineering</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card p-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h3 class="h4">Microsoft Certified Solutions Expert (MCSE)</h3>
+                            <span class="badge bg-primary">2008</span>
+                        </div>
+                        <p class="mb-1"><strong>Microsoft Certified IIHT</strong>, India</p>
+                        <p>Infrastructure solutions certification focusing on Windows Server environments</p>
+                        <div class="mt-2">
+                            <span class="badge bg-light text-dark">Windows Server</span>
+                            <span class="badge bg-light text-dark">Active Directory</span>
+                            <span class="badge bg-light text-dark">Infrastructure Solutions</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card p-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h3 class="h4">CCNA & Linux Administration</h3>
+                            <span class="badge bg-primary">2008</span>
+                        </div>
+                        <p class="mb-1"><strong>Cisco Certified Linux Foundation</strong> Jetking, India</p>
+                        <p>Cisco Certified Network Associate and comprehensive Linux system administration</p>
+                        <div class="mt-2">
+                            <span class="badge bg-light text-dark">Routing & Switching</span>
+                            <span class="badge bg-light text-dark">Network Security</span>
+                            <span class="badge bg-light text-dark">Linux Server Management</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card p-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h3 class="h4">CompTIA A+ & Network+</h3>
+                            <span class="badge bg-primary">2007</span>
+                        </div>
+                        <p class="mb-1"><strong>CompTIA Certified</strong> Netcom Institute, India</p>
+                        <p>Foundational IT certifications covering hardware, software, and networking fundamentals</p>
+                        <div class="mt-2">
+                            <span class="badge bg-light text-dark">Hardware</span>
+                            <span class="badge bg-light text-dark">Software</span>
+                            <span class="badge bg-light text-dark">Networking</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card p-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h3 class="h4">Higher Secondary Education</h3>
+                            <span class="badge bg-primary">2006</span>
+                        </div>
+                        <p class="mb-1"><strong>Himali Boarding School</strong> India</p>
+                        <p>Science stream with focus on mathematics and computer science</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card p-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h3 class="h4">Secondary Education</h3>
+                            <span class="badge bg-primary">2004</span>
+                        </div>
+                        <p class="mb-1"><strong>S.T. Augustine's School</strong> India</p>
+                        <p>Foundational education with early exposure to computer studies</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4" data-aos="fade-up">
+                    <div class="card h-100 text-center p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-network-wired fa-3x text-primary"></i>
+                        </div>
+                        <h3 class="h5">Infrastructure Expertise</h3>
+                        <p>Enterprise systems & network architecture</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 text-center p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-shield-alt fa-3x text-primary"></i>
+                        </div>
+                        <h3 class="h5">Security Focus</h3>
+                        <p>Certified security implementations</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 text-center p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-tasks fa-3x text-primary"></i>
+                        </div>
+                        <h3 class="h5">Project Leadership</h3>
+                        <p>Professional project management</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Work Experience (2012 - Present)</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="card p-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h3 class="h4">IT Manager</h3>
+                            <div>
+                                <span class="badge bg-success">Current</span>
+                                <span class="badge bg-primary">April 2024 – Present</span>
+                            </div>
+                        </div>
+                        <p class="mb-1"><strong>Moraa Educational Complex</strong></p>
+                        <p><strong>Job Purpose:</strong> Oversee planning, implementation, and management of all IT infrastructure and technology initiatives.</p>
+                        <ul>
+                            <li>Manage Proxmox virtualization platform</li>
+                            <li>Implement pfSense Firewall with pfBlockerNG</li>
+                            <li>Configure AdGuard Home for DNS filtering</li>
+                            <li>Utilize Zabbix for infrastructure monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card p-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h3 class="h4">Technical Supervisor</h3>
+                            <span class="badge bg-primary">Nov 2023 – Mar 2024</span>
+                        </div>
+                        <p class="mb-1"><strong>Setaragan Mutahed</strong></p>
+                        <p><strong>Job Purpose:</strong> Oversee all technical aspects of Electronic Money Institution project.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card p-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h3 class="h4">IT Officer</h3>
+                            <span class="badge bg-primary">Feb 2023 – Oct 2023</span>
+                        </div>
+                        <p class="mb-1"><strong>Brightway Consultancy</strong></p>
+                        <p>Manage network infrastructure, operations, security and user support functions.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card p-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h3 class="h4">IT Consultant</h3>
+                            <span class="badge bg-primary">Sept 2022 – Jan 2023</span>
+                        </div>
+                        <p class="mb-1"><strong>DAWIOIL LTD</strong></p>
+                        <p>Evaluate IT infrastructure and provide expert guidance for optimization.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card p-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h3 class="h4">IT Manager</h3>
+                            <span class="badge bg-primary">Apr 2016 – Aug 2019</span>
+                        </div>
+                        <p class="mb-1"><strong>Muslim English Language Institute</strong></p>
+                        <p>Manage all aspects of IT operations, infrastructure, security and user support.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card p-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h3 class="h4">ICT & ERP Manager</h3>
+                            <span class="badge bg-primary">Jun 2012 – Apr 2016</span>
+                        </div>
+                        <p class="mb-1"><strong>DAWIOIL LTD</strong></p>
+                        <p>Provide strategic technical leadership and manage all aspects of IT operations and projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Technical Expertise</h2>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card p-4 h-100" data-aos="fade-up">
+                        <h3 class="h4 mb-4">Security & Firewalls</h3>
+                        
+                        <div class="skill-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <div class="skill-name">pfSense Firewall</div>
+                                <div>96%</div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-bar" data-width="96"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <div class="skill-name">Sophos Firewall</div>
+                                <div>94%</div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-bar" data-width="94"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <div class="skill-name">Cyberoam/Fortinet</div>
+                                <div>92%</div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-bar" data-width="92"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <div class="skill-name">Cisco Switches</div>
+                                <div>95%</div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-bar" data-width="95"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="card p-4 h-100" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="h4 mb-4">Server Management</h3>
+                        
+                        <div class="skill-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <div class="skill-name">Windows Server (2003-2019)</div>
+                                <div>95%</div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-bar" data-width="95"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <div class="skill-name">Linux Servers (Ubuntu, Red Hat)</div>
+                                <div>90%</div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-bar" data-width="90"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <div class="skill-name">Virtualization (Proxmox, Hyper-V)</div>
+                                <div>92%</div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-bar" data-width="92"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <div class="skill-name">Backup Solutions (Veeam)</div>
+                                <div>94%</div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-bar" data-width="94"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-lg-12">
+                    <div class="card p-4" data-aos="fade-up">
+                        <h3 class="h4 mb-4">Technologies & Tools</h3>
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle text-primary me-2"></i>
+                                    <span>Active Directory</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle text-primary me-2"></i>
+                                    <span>DNS/DHCP</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle text-primary me-2"></i>
+                                    <span>SQL Server</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle text-primary me-2"></i>
+                                    <span>Linux Administration</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle text-primary me-2"></i>
+                                    <span>Network Security</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle text-primary me-2"></i>
+                                    <span>VPN Technologies</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle text-primary me-2"></i>
+                                    <span>cPanel/WHM</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-check-circle text-primary me-2"></i>
+                                    <span>Python Automation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Key Projects</h2>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                    <div class="project-card h-100">
+                        <img src="https://picsum.photos/seed/lms/400/250.jpg" alt="LMS Project" class="project-img">
+                        <div class="p-4">
+                            <h3 class="h5">LMS Project for Moraa</h3>
+                            <p>Learning Management System implementation for Moraa Educational Complex with digital curriculum delivery.</p>
+                            <div class="mt-3">
+                                <span class="badge bg-light text-dark">LMS</span>
+                                <span class="badge bg-light text-dark">Education</span>
+                                <span class="badge bg-light text-dark">Digital Curriculum</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card h-100">
+                        <img src="https://picsum.photos/seed/meli/400/250.jpg" alt="MELI MIS Project" class="project-img">
+                        <div class="p-4">
+                            <h3 class="h5">MELI MIS Project</h3>
+                            <p>Developed comprehensive Management Information System using Odoo platform for educational institution.</p>
+                            <div class="mt-3">
+                                <span class="badge bg-light text-dark">MIS</span>
+                                <span class="badge bg-light text-dark">Odoo</span>
+                                <span class="badge bg-light text-dark">Education</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card h-100">
+                        <img src="https://picsum.photos/seed/nido/400/250.jpg" alt="NIDO NGO Project" class="project-img">
+                        <div class="p-4">
+                            <h3 class="h5">NIDO NGO Project</h3>
+                            <p>Implemented complete Windows infrastructure including WDS, WSUS, DNS, DHCP, and SQL Server.</p>
+                            <div class="mt-3">
+                                <span class="badge bg-light text-dark">Windows Server</span>
+                                <span class="badge bg-light text-dark">WDS</span>
+                                <span class="badge bg-light text-dark">WSUS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card h-100">
+                        <img src="https://picsum.photos/seed/ubuntu/400/250.jpg" alt="Ubuntu Server & Firewall" class="project-img">
+                        <div class="p-4">
+                            <h3 class="h5">Ubuntu Server & Firewall</h3>
+                            <p>Installed and configured Ubuntu server with KVM virtualization and enterprise-grade firewall for ETISALAT.</p>
+                            <div class="mt-3">
+                                <span class="badge bg-light text-dark">Ubuntu</span>
+                                <span class="badge bg-light text-dark">KVM</span>
+                                <span class="badge bg-light text-dark">Firewall</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-card h-100">
+                        <img src="https://picsum.photos/seed/erp/400/250.jpg" alt="DAWIOIL ERP Implementation" class="project-img">
+                        <div class="p-4">
+                            <h3 class="h5">DAWIOIL ERP Implementation</h3>
+                            <p>Enterprise Resource Planning system implementation with technical translation and issue resolution for developers.</p>
+                            <div class="mt-3">
+                                <span class="badge bg-light text-dark">ERP</span>
+                                <span class="badge bg-light text-dark">Technical Translation</span>
+                                <span class="badge bg-light text-dark">Issue Resolution</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <div class="card p-4" data-aos="fade-up">
+                        <h3 class="h4 mb-4">Current Projects & Initiatives</h3>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100 p-3">
+                                    <h4 class="h5 mb-3">Enterprise Security Hardening</h4>
+                                    <p>Implementing comprehensive security measures for educational institutions</p>
+                                    <div class="mt-3">
+                                        <span class="badge bg-primary me-2 mb-2">pfSense</span>
+                                        <span class="badge bg-primary me-2 mb-2">pfBlockerNG</span>
+                                        <span class="badge bg-primary me-2 mb-2">AdGuard Home</span>
+                                        <span class="badge bg-primary me-2 mb-2">Zabbix</span>
+                                    </div>
+                                    <p class="mt-3">Focus on network monitoring, threat detection, and preventive security measures.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100 p-3">
+                                    <h4 class="h5 mb-3">Infrastructure Modernization</h4>
+                                    <p>Migration to virtualized environments with high availability</p>
+                                    <div class="mt-3">
+                                        <span class="badge bg-primary me-2 mb-2">Proxmox</span>
+                                        <span class="badge bg-primary me-2 mb-2">KVM</span>
+                                        <span class="badge bg-primary me-2 mb-2">Windows Server</span>
+                                        <span class="badge bg-primary me-2 mb-2">Linux</span>
+                                    </div>
+                                    <p class="mt-3">Developing scalable, resilient infrastructure solutions for growing organizations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card p-4 h-100" data-aos="fade-up">
+                        <h3 class="h4 mb-4">Contact Information</h3>
+                        
+                        <div class="contact-item d-flex align-items-center mb-3">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="h6 mb-1">Email</h4>
+                                <div class="email-link" data-user="asar23" data-domain="gmail.com">asar23@gmail.com</div>
+                                <div class="email-link" data-user="asarkhan447" data-domain="gmail.com">asarkhan447@gmail.com</div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item d-flex align-items-center mb-3">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="h6 mb-1">Phone</h4>
+                                <div>+93 731 826 346</div>
+                                <div>+93 799 588 319</div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item d-flex align-items-center mb-3">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="h6 mb-1">Location</h4>
+                                <div>Benissar, Kabul</div>
+                                <div>Afghanistan</div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item d-flex align-items-center">
+                            <div class="contact-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div>
+                                <h4 class="h6 mb-1">Availability</h4>
+                                <div class="badge bg-success">Open to Opportunities</div>
+                                <div>Available Immediately</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card p-4 h-100" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="h4 mb-4">Send Me a Message</h3>
+                        
+                        <form id="contact-form">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Your Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h3 class="h5 mb-3">Asar Khan</h3>
+                    <p>Senior IT Infrastructure & Cybersecurity Expert with 13+ years of experience delivering reliable IT solutions.</p>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h3 class="h5 mb-3">Quick Links</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-white-50">Home</a></li>
+                        <li class="mb-2"><a href="#about" class="text-white-50">About</a></li>
+                        <li class="mb-2"><a href="#experience" class="text-white-50">Experience</a></li>
+                        <li class="mb-2"><a href="#skills" class="text-white-50">Skills</a></li>
+                        <li class="mb-2"><a href="#projects" class="text-white-50">Projects</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-white-50">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h3 class="h5 mb-3">Connect With Me</h3>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/asarkhan-afg" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" target="_blank" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p class="mb-0">© 2024 Asar Khan. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="btn btn-primary back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Visitor Counter -->
+    <div class="visitor-counter">
+        <i class="fas fa-eye"></i>
+        <span id="visitor-count">0</span> visitors
+    </div>
     
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
@@ -84,6 +1158,7 @@
     <!-- AOS Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
+    <!-- Custom JavaScript -->
     <script>
         // Initialize AOS with reduced motion support
         AOS.init({
@@ -127,7 +1202,7 @@
 
         // Animate skill bars on scroll
         function animateSkillBars() {
-            const skillBars = document.querySelectorAll('.skill-progress');
+            const skillBars = document.querySelectorAll('.skill-bar');
             skillBars.forEach(bar => {
                 const width = bar.getAttribute('data-width') + '%';
                 bar.style.width = width;
@@ -243,4 +1318,65 @@
         document.querySelectorAll('img').forEach(img => {
             img.onerror = function() {
                 // Fallback image
-                this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iBoZWlnaHQ9IjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9M9h0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Mh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9M9h0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Mh0dHA693d3cudzMub3JnLzIjCIge1sbnM9Mh0dHA6Ly93d3cudzMub3JnLzIjCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjCIge1sbnM9Mh0dHA6Ly93d3cudzMub3JnLzIjCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Mh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjCIge1sbnM9Mh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Mh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Mh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9M9h0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9h0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9M9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6d93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Mh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Mh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Mh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Mh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Mh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Mh0dHA693d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Mh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9M9h0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Mh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIjMCIge1sbnM9Mh
+                this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iI2Y3ZjdmNyIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZpbGw9IiM5OTkiPkltYWdlIE5vdCBBdmFpbGFibGU8L3RleHQ+PC9zdmc+';
+            }
+        });
+
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Create mailto link
+            const mailtoLink = `mailto:asar23@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Reset form
+            this.reset();
+            
+            // Show success message
+            const successAlert = document.createElement('div');
+            successAlert.className = 'alert alert-success mt-3';
+            successAlert.textContent = 'Thank you for your message! I will get back to you soon.';
+            
+            this.appendChild(successAlert);
+            
+            // Remove success message after 5 seconds
+            setTimeout(() => {
+                successAlert.remove();
+            }, 5000);
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'flex';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Visitor counter
+        let visitorCount = localStorage.getItem('visitorCount') || 0;
+        visitorCount++;
+        localStorage.setItem('visitorCount', visitorCount);
+        document.getElementById('visitor-count').textContent = visitorCount;
+    </script>
+</body>
+</html>
