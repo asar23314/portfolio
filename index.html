@@ -267,7 +267,7 @@
             color: var(--dark-color);
         }
 
-        /* DETAILS BUTTON - Improved for Mobile */
+        /* DETAILS BUTTON - Improved for Mobile -->
         .btn-details {
             background: transparent;
             color: var(--primary-color);
@@ -291,7 +291,7 @@
             outline-offset: 2px;
         }
         
-        /* PROFILE CARD */
+        <!-- PROFILE CARD -->
         .profile-card {
             background: var(--card-bg);
             border-radius: 20px;
@@ -324,7 +324,7 @@
             font-weight: 500;
         }
         
-        /* SECTION STYLING */
+        <!-- SECTION STYLING -->
         .section {
             padding: 100px 0;
         }
@@ -358,7 +358,7 @@
             margin-right: auto;
         }
         
-        /* EXPERIENCE CARDS */
+        <!-- EXPERIENCE CARDS -->
         .experience-card {
             background: var(--card-bg);
             border-radius: 16px;
@@ -405,7 +405,7 @@
             margin-bottom: 1rem;
         }
 
-        /* DETAILS CONTENT - Improved for Mobile */
+        <!-- DETAILS CONTENT - Improved for Mobile -->
         .experience-details {
             max-height: 0;
             overflow: hidden;
@@ -459,7 +459,7 @@
             left: 0;
         }
 
-        /* SKILLS - Improved with Intersection Observer support */
+        <!-- SKILLS - Improved with Intersection Observer support -->
         .skill-item {
             margin-bottom: 1.5rem;
         }
@@ -493,7 +493,7 @@
             width: var(--target-width); /* Will be set by JavaScript */
         }
 
-        /* CONTACT */
+        <!-- CONTACT -->
         .contact-item {
             background: var(--card-bg);
             border-radius: 16px;
@@ -522,7 +522,7 @@
             font-size: 1.5rem;
         }
         
-        /* FOOTER */
+        <!-- FOOTER -->
         footer {
             background: #060818;
             color: var(--text-color);
@@ -566,7 +566,7 @@
             border-color: var(--primary-color);
         }
         
-        /* RESPONSIVE IMPROVEMENTS */
+        <!-- RESPONSIVE IMPROVEMENTS -->
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.5rem;
@@ -591,7 +591,7 @@
                 padding: 12px 25px;
                 font-size: 0.9rem;
             }
-            /* Improve touch targets on mobile */
+            <!-- Improve touch targets on mobile -->
             .nav-link {
                 padding: 10px 15px;
                 margin: 0;
@@ -601,7 +601,7 @@
                 width: 100%;
                 margin-top: 1rem;
             }
-            /* Prevent horizontal scrolling */
+            <!-- Prevent horizontal scrolling -->
             .experience-details.show {
                 padding: 1rem;
                 overflow-x: hidden;
@@ -629,7 +629,7 @@
             }
         }
 
-        /* Accessibility Improvements */
+        <!-- Accessibility Improvements -->
         .sr-only {
             position: absolute;
             width: 1px;
@@ -642,7 +642,7 @@
             border: 0;
         }
 
-        /* Focus styles for accessibility */
+        <!-- Focus styles for accessibility -->
         :focus {
             outline: 2px solid var(--primary-color);
             outline-offset: 2px;
@@ -657,24 +657,24 @@
             outline-offset: 2px;
         }
 
-        /* Improve contrast for accessibility */
+        <!-- Improve contrast for accessibility -->
         a:hover, a:focus {
             text-decoration: underline;
         }
 
-        /* Better text contrast */
+        <!-- Better text contrast -->
         .text-muted {
             color: #b8c1ec !important;
             opacity: 0.8;
         }
 
-        /* Loading state */
+        <!-- Loading state -->
         .loading {
             opacity: 0.5;
             pointer-events: none;
         }
 
-        /* Print Styles */
+        <!-- Print Styles -->
         @media print {
             .navbar {
                 position: static !important;
@@ -740,13 +740,13 @@
                 text-decoration: underline;
             }
             
-            /* Hide elements not needed for print */
+            <!-- Hide elements not needed for print -->
             .social-links,
             .navbar-toggler {
                 display: none !important;
             }
             
-            /* Ensure good contrast for printing */
+            <!-- Ensure good contrast for printing -->
             body {
                 background-color: #fff !important;
                 color: #000 !important;
@@ -770,19 +770,19 @@
                 color: #000 !important;
             }
             
-            /* Add page breaks where appropriate */
+            <!-- Add page breaks where appropriate -->
             .section {
                 page-break-inside: avoid;
             }
             
-            /* Print URLs after links */
+            <!-- Print URLs after links -->
             a[href^="http"]:after {
                 content: " (" attr(href) ")";
                 font-size: 0.9em;
                 font-weight: normal;
             }
             
-            /* Don't print anchor links */
+            <!-- Don't print anchor links -->
             a[href^="#"]:after {
                 content: "";
             }
@@ -1005,21 +1005,21 @@
             <article class="experience-card mb-4" data-aos="fade-up" data-aos-delay="100" itemscope itemtype="https://schema.org/Person">
                 <div class="d-flex justify-content-between align-items-start mb-3 flex-wrap">
                     <div>
-                        <span class="experience-period">November 2023 – Present</span>
+                        <span class="experience-period">November 2023 – April 2025</span>
                         <h3 class="h4 mb-2" itemprop="jobTitle">Technical Supervisor</h3>
                         <h4 class="h5 mb-3" itemprop="worksFor">Setaragan Mutahed</h4>
                     </div>
                 </div>
                 
                 <p class="lead mb-3" itemprop="description">
-                    Oversee all technical aspects of the Electronic Money Institution project to ensure it is delivered on time, on budget and meets technical requirements.
+                    Oversaw all technical aspects of the Electronic Money Institution project to ensure it was delivered on time, on budget and met technical requirements.
                 </p>
                 
                 <h5 class="h6 mb-3">Key Responsibilities:</h5>
                 <ul class="list-unstyled" role="list">
-                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Oversee work of technical/IT staff and ensure projects are completed accurately and on schedule</li>
-                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Manage technical projects from planning and budgeting to implementation</li>
-                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Install and configure pfSense firewall and AdGuard Home for network security</li>
+                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Oversaw work of technical/IT staff and ensured projects were completed accurately and on schedule</li>
+                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Managed technical projects from planning and budgeting to implementation</li>
+                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Installed and configured pfSense firewall and AdGuard Home for network security</li>
                 </ul>
                 
                 <button class="btn-details view-details-btn" data-target="setaragan-details"
@@ -1043,10 +1043,10 @@
                         <div class="detail-item">
                             <h5>Project & Team Management</h5>
                             <ul>
-                                <li>Oversee the work of technical/IT staff and ensure projects and tasks are completed accurately and on schedule</li>
-                                <li>Manage technical projects from planning and budgeting to implementation</li>
-                                <li>Train and develop technical staff by identifying training needs and conducting knowledge transfer sessions</li>
-                                <li>Prepare technical documentation such as architecture diagrams, procedures, and knowledge bases</li>
+                                <li>Oversaw the work of technical/IT staff and ensured projects and tasks were completed accurately and on schedule</li>
+                                <li>Managed technical projects from planning and budgeting to implementation</li>
+                                <li>Trained and developed technical staff by identifying training needs and conducting knowledge transfer sessions</li>
+                                <li>Prepared technical documentation such as architecture diagrams, procedures, and knowledge bases</li>
                             </ul>
                         </div>
                         
@@ -1074,15 +1074,15 @@
                 </div>
                 
                 <p class="lead mb-3" itemprop="description">
-                    Manage and oversee the company's network infrastructure, operations, and security and user support functions. Ensure smooth network performance, compliance with security standards, and around-the-clock technical support.
+                    Managed and oversaw the company's network infrastructure, operations, and security and user support functions. Ensured smooth network performance, compliance with security standards, and around-the-clock technical support.
                 </p>
                 
                 <h5 class="h6 mb-3">Key Responsibilities:</h5>
                 <ul class="list-unstyled" role="list">
-                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Manage LAN/WAN networks and network security systems</li>
-                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Establish network specifications and configurations</li>
-                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Conduct training programs and provide user support</li>
-                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Provide 24/7 critical support and technical assistance</li>
+                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Managed LAN/WAN networks and network security systems</li>
+                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Established network specifications and configurations</li>
+                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Conducted training programs and provided user support</li>
+                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Provided 24/7 critical support and technical assistance</li>
                 </ul>
                 
                 <button class="btn-details view-details-btn" data-target="brightway-details"
@@ -1127,7 +1127,7 @@
                 </div>
                 
                 <p class="lead mb-3" itemprop="description">
-                    Evaluate clients' existing IT infrastructure and provide expert guidance, solutions and support to optimize systems, enhance security, ensure compliance and empower users through strategic technology management, integration and training.
+                    Evaluated clients' existing IT infrastructure and provided expert guidance, solutions and support to optimize systems, enhance security, ensure compliance and empower users through strategic technology management, integration and training.
                 </p>
                 
                 <button class="btn-details view-details-btn" data-target="dawioil-details"
@@ -1183,7 +1183,7 @@
                 </div>
                 
                 <p class="lead mb-3" itemprop="description">
-                    Develop and manage the company's IT training programs to assess skill gaps, design job-specific materials, implement assessments, and ensure employees' continuous development and compliance with IT training standards.
+                    Developed and managed the company's IT training programs to assess skill gaps, design job-specific materials, implement assessments, and ensure employees' continuous development and compliance with IT training standards.
                 </p>
                 
                 <button class="btn-details view-details-btn" data-target="straun-details"
