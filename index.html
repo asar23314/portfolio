@@ -41,15 +41,6 @@
             overflow-x: hidden;
         }
 
-        /* Image Styling with Fallback */
-        .profile-img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            object-position: center;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-        }
-
         /* SCROLLBAR STYLING */
         ::-webkit-scrollbar {
             width: 10px;
@@ -518,6 +509,14 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Profile Image */
+        .profile-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            object-position: center;
+        }
     </style>
 </head>
 <body>
@@ -551,7 +550,7 @@
                     <h1 class="hero-title">Asar Khan</h1>
                     <h2 class="hero-subtitle">Senior IT Infrastructure & Cybersecurity Expert</h2>
                     <p class="hero-description">
-                        With over 13 years of experience in optimizing IT infrastructure, enhancing cybersecurity, and leading technology teams. Proven expertise in network design, security implementation, and ensuring seamless operations across complex environments.
+                        Experienced IT professional with over 13 years of expertise in optimizing infrastructure, enhancing security, and ensuring seamless operations. Proven record of accomplishment in network design, troubleshooting, disaster recovery planning, and IT team leadership.
                     </p>
                     
                     <div class="row mb-4">
@@ -563,7 +562,7 @@
                         </div>
                         <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-delay="200">
                             <div class="stats-card">
-                                <div class="stats-number">200+</div>
+                                <div class="stats-number">100+</div>
                                 <div class="stats-label">Projects Completed</div>
                             </div>
                         </div>
@@ -575,25 +574,27 @@
                         </div>
                     </div>
                     
-                    <div class="d-flex gap-3">
+                    <div class="d-flex flex-wrap gap-3">
                         <a href="#contact" class="btn-custom btn-outline-light-custom">Contact Me</a>
                         <a href="#experience" class="btn-custom btn-primary-custom">View Experience</a>
+                        <a href="#skills" class="btn-custom btn-outline-light-custom">View Skills</a>
                     </div>
                 </div>
                 <div class="col-lg-5 mt-5 mt-lg-0" data-aos="fade-left">
                     <div class="profile-card">
-                        <img src="https://raw.githubusercontent.com/asar23314/portfolio/main/unnamed%20(3).jpg" 
-                             alt="Asar Khan - Senior IT Expert" 
-                             class="profile-img"
-                             onerror="this.onerror=null; this.src='unnamed (3).jpg';">
                         <div class="profile-content">
-                            <h3 class="h5 mb-2">Asar Khan</h3>
+                            <img src="https://raw.githubusercontent.com/asar23314/portfolio/main/unnamed%20(3).jpg" 
+                                 alt="Asar Khan - Senior IT Expert" 
+                                 class="profile-img rounded-circle mb-3"
+                                 onerror="this.onerror=null; this.src='https://via.placeholder.com/300x300/0a0e27/00d4ff?text=AK';">
+                            <h3 class="h4 mb-2">Asar Khan</h3>
                             <p class="mb-3"><i class="fas fa-map-marker-alt me-2"></i>Kabul, Afghanistan</p>
                             <div class="d-flex flex-wrap gap-2 justify-content-center">
                                 <span class="badge bg-primary">IT Infrastructure</span>
                                 <span class="badge bg-success">Cybersecurity</span>
                                 <span class="badge bg-info text-dark">Network Design</span>
                                 <span class="badge bg-warning text-dark">Team Leadership</span>
+                                <span class="badge bg-dark">Virtualization</span>
                             </div>
                         </div>
                     </div>
@@ -608,47 +609,49 @@
             <div class="text-center mb-5">
                 <h2 class="section-title" data-aos="fade-up">Professional Profile</h2>
                 <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                    Senior IT Infrastructure & Cybersecurity Expert with extensive experience in optimizing technology environments and leading digital transformation initiatives.
+                    Skilled IT professional with 13+ years of expertise in network infrastructure, server management, and cybersecurity across Windows and Linux environments.
                 </p>
             </div>
             
             <div class="row">
                 <div class="col-lg-6 mb-4" data-aos="fade-right">
                     <div class="experience-card">
-                        <h3 class="h4 mb-3">About Me</h3>
+                        <h3 class="h4 mb-3">Career Summary</h3>
                         <p class="mb-3">
-                            I am a seasoned IT professional with over 13 years of hands-on experience in designing, implementing, and managing robust IT infrastructure and cybersecurity solutions.
+                            With over 13 years of hands-on experience, I'm proficient in DNS, DHCP, firewalls, VPNs, virtualization, and backup solutions like Veeam. Experienced in ePanel installation for web hosting management, domain handling, and server optimization. I deliver reliable IT solutions that enhance security, optimize performance, and support business success.
                         </p>
-                        <h5 class="h6 mb-2">Core Competencies:</h5>
+                        <h5 class="h6 mb-2">Core Expertise:</h5>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-check-circle me-2"></i>IT Infrastructure Design</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2"></i>Network Infrastructure Design & Management</li>
                             <li class="mb-2"><i class="fas fa-check-circle me-2"></i>Cybersecurity Implementation</li>
-                            <li class="mb-2"><i class="fas fa-check-circle me-2"></i>Network Architecture</li>
-                            <li class="mb-2"><i class="fas fa-check-circle me-2"></i>Team Leadership</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2"></i>Server Virtualization (Proxmox, Hyper-V)</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2"></i>Firewall Configuration (pfSense, Sophos, Mikrotik)</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2"></i>Active Directory & Windows Server Management</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2"></i>Disaster Recovery & Backup Solutions</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="col-lg-6 mb-4" data-aos="fade-left">
                     <div class="experience-card">
-                        <h3 class="h4 mb-3">Career Objectives</h3>
+                        <h3 class="h4 mb-3">Career Aspirations</h3>
                         <p class="mb-3">
-                            Seeking senior-level opportunities where I can leverage my expertise to:
+                            To continue advancing in the field of IT infrastructure and cybersecurity. With 13+ years of experience, I aim to leverage my extensive expertise to take on more challenging projects and leadership roles, where I can drive innovation and implement cutting-edge solutions.
                         </p>
                         
                         <div class="mb-3">
-                            <h5 class="h6 mb-2"><i class="fas fa-shield-alt me-2 text-primary"></i>Enhance Security Posture</h5>
-                            <p class="small">Implement comprehensive security frameworks and protect organizational assets</p>
+                            <h5 class="h6 mb-2"><i class="fas fa-shield-alt me-2 text-primary"></i>Security Focus</h5>
+                            <p class="small">Develop and implement comprehensive security strategies to protect organizational assets</p>
                         </div>
                         
                         <div class="mb-3">
-                            <h5 class="h6 mb-2"><i class="fas fa-server me-2 text-primary"></i>Optimize Infrastructure</h5>
-                            <p class="small">Design scalable and reliable IT infrastructure solutions</p>
+                            <h5 class="h6 mb-2"><i class="fas fa-network-wired me-2 text-primary"></i>Infrastructure Optimization</h5>
+                            <p class="small">Optimize network performance and implement scalable infrastructure solutions</p>
                         </div>
                         
-                        <div>
-                            <h5 class="h6 mb-2"><i class="fas fa-users me-2 text-primary"></i>Lead Technology Teams</h5>
-                            <p class="small">Mentor and guide IT teams towards excellence</p>
+                        <div class="mb-3">
+                            <h5 class="h6 mb-2"><i class="fas fa-chart-line me-2 text-primary"></i>Organizational Contribution</h5>
+                            <p class="small">Contribute to the overall success of organizations through strategic technology implementation</p>
                         </div>
                     </div>
                 </div>
@@ -662,7 +665,7 @@
             <div class="text-center mb-5">
                 <h2 class="section-title" data-aos="fade-up">Professional Experience</h2>
                 <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                    Detailed career journey showcasing leadership, technical expertise, and project achievements. Click "View Details" for comprehensive information.
+                    13+ years of progressive experience in IT infrastructure management, cybersecurity, and team leadership across diverse industries.
                 </p>
             </div>
             
@@ -670,7 +673,7 @@
             <div class="experience-card mb-4" data-aos="fade-up">
                 <div class="d-flex justify-content-between align-items-start mb-3 flex-wrap">
                     <div>
-                        <span class="experience-period">April 2024 – Present</span>
+                        <span class="experience-period">April 2025 – Present</span>
                         <h3 class="h4 mb-2">IT Manager</h3>
                         <h4 class="h5 mb-3">Moraa Educational Complex</h4>
                     </div>
@@ -678,50 +681,50 @@
                 </div>
                 
                 <p class="lead mb-3">
-                    Leading comprehensive IT operations and infrastructure management for a major educational institution with 2,000+ students and 200+ staff members.
+                    Oversee the planning, implementation, and management of all IT infrastructure, support systems, and technology-driven initiatives to ensure secure, efficient, and innovative IT operations across the institution.
                 </p>
                 
                 <h5 class="h6 mb-3">Key Responsibilities:</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><i class="fas fa-angle-right me-2"></i>Oversee entire IT infrastructure including servers, network, and security systems</li>
-                    <li class="mb-2"><i class="fas fa-angle-right me-2"></i>Manage 8-member IT team across operations, support, and development</li>
-                    <li class="mb-2"><i class="fas fa-angle-right me-2"></i>Develop and implement IT policies, procedures, and security protocols</li>
-                    <li class="mb-2"><i class="fas fa-angle-right me-2"></i>Budget planning and vendor management for IT procurement</li>
+                    <li class="mb-2"><i class="fas fa-angle-right me-2"></i>Manage and maintain institutional IT infrastructure including networks, servers, virtualization platforms</li>
+                    <li class="mb-2"><i class="fas fa-angle-right me-2"></i>Deploy and administer Proxmox for server virtualization and manage Windows Server environments</li>
+                    <li class="mb-2"><i class="fas fa-angle-right me-2"></i>Implement and manage pfSense Firewall with pfBlockerNG for enhanced network security</li>
+                    <li class="mb-2"><i class="fas fa-angle-right me-2"></i>Configure AdGuard Home for DNS-level content filtering and security</li>
                 </ul>
                 
                 <button class="btn-details view-details-btn" data-target="moraa-details">
-                    <i class="fas fa-chevron-down me-2"></i>View Details
+                    <i class="fas fa-chevron-down me-2"></i>View Detailed Responsibilities
                 </button>
                 
                 <div id="moraa-details" class="experience-details">
                     <div class="details-content">
                         <div class="detail-item">
-                            <h5>Infrastructure Achievements</h5>
+                            <h5>Infrastructure Management</h5>
                             <ul>
-                                <li>Designed and implemented Proxmox virtualization platform hosting 50+ VMs</li>
-                                <li>Achieved 99.9% uptime for critical educational systems</li>
-                                <li>Reduced server hardware costs by 60% through virtualization</li>
-                                <li>Implemented automated backup systems with 30-day retention</li>
+                                <li>Deploy and administer Proxmox for server virtualization</li>
+                                <li>Manage Windows Server environments with Active Directory, DHCP, and DNS</li>
+                                <li>Configure Synology NAS for secure file storage, backup, and collaboration</li>
+                                <li>Configure and maintain Print Server for centralized printer management</li>
                             </ul>
                         </div>
                         
                         <div class="detail-item">
                             <h5>Security Implementation</h5>
                             <ul>
-                                <li>Deployed pfSense firewall with pfBlockerNG, blocking 95% malicious traffic</li>
-                                <li>Configured AdGuard Home filtering 1M+ DNS requests monthly</li>
-                                <li>Implemented Zabbix monitoring for 100+ infrastructure components</li>
-                                <li>Established comprehensive security policies and incident response procedures</li>
+                                <li>Implement and manage pfSense Firewall with pfBlockerNG</li>
+                                <li>Configure AdGuard Home for DNS-level content filtering</li>
+                                <li>Monitor network performance and traffic using ntopng</li>
+                                <li>Utilize Zabbix OS for infrastructure monitoring and alerting</li>
                             </ul>
                         </div>
                         
                         <div class="detail-item">
-                            <h5>Team Leadership</h5>
+                            <h5>System Administration</h5>
                             <ul>
-                                <li>Reduced IT response time by 40% through process optimization</li>
-                                <li>Implemented ITIL-based service desk with 95% user satisfaction</li>
-                                <li>Trained 3 junior IT staff to senior positions</li>
-                                <li>Developed disaster recovery plans tested quarterly</li>
+                                <li>Create and manage shared folders for document scanning and collaboration</li>
+                                <li>Configure Windows machines for QuickBooks accounting operations</li>
+                                <li>Implement Veeam Backup Solution for data protection and disaster recovery</li>
+                                <li>Plan and enforce IT policies including user access and data protection</li>
                             </ul>
                         </div>
                         
@@ -729,13 +732,13 @@
                             <h5>Technologies Used</h5>
                             <div class="d-flex flex-wrap gap-2 mt-2">
                                 <span class="badge bg-light text-dark">Proxmox VE</span>
+                                <span class="badge bg-light text-dark">Windows Server</span>
+                                <span class="badge bg-light text-dark">Active Directory</span>
                                 <span class="badge bg-light text-dark">pfSense Firewall</span>
-                                <span class="badge bg-light text-dark">Zabbix Monitoring</span>
                                 <span class="badge bg-light text-dark">AdGuard Home</span>
-                                <span class="badge bg-light text-dark">Windows Server 2019/2022</span>
-                                <span class="badge bg-light text-dark">Ubuntu/Debian Linux</span>
+                                <span class="badge bg-light text-dark">Zabbix</span>
                                 <span class="badge bg-light text-dark">Veeam Backup</span>
-                                <span class="badge bg-light text-dark">Cisco Switching</span>
+                                <span class="badge bg-light text-dark">Synology NAS</span>
                             </div>
                         </div>
                     </div>
@@ -746,56 +749,54 @@
             <div class="row">
                 <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="experience-card h-100">
-                        <span class="experience-period">Nov 2023 – Mar 2024</span>
+                        <span class="experience-period">November 2023 – Present</span>
                         <h3 class="h4 mb-3">Technical Supervisor</h3>
                         <h4 class="h5 text-primary mb-3">Setaragan Mutahed</h4>
                         
                         <p class="mb-3">
-                            Oversaw all technical aspects of Electronic Money Institution (EMI) project implementation for financial services.
+                            Oversee all technical aspects of the Electronic Money Institution project to ensure it is delivered on time, on budget and meets technical requirements.
                         </p>
                         
                         <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-angle-right me-2"></i>Led technical team for EMI platform deployment</li>
-                            <li class="mb-2"><i class="fas fa-angle-right me-2"></i>Ensured PCI DSS compliance for payment systems</li>
-                            <li class="mb-2"><i class="fas fa-angle-right me-2"></i>Coordinated with stakeholders for seamless integration</li>
+                            <li class="mb-2"><i class="fas fa-angle-right me-2"></i>Oversee work of technical/IT staff and ensure project completion</li>
+                            <li class="mb-2"><i class="fas fa-angle-right me-2"></i>Manage technical projects from planning to implementation</li>
+                            <li class="mb-2"><i class="fas fa-angle-right me-2"></i>Install and configure pfSense firewall and AdGuard Home</li>
                         </ul>
                         
                         <button class="btn-details view-details-btn" data-target="setaragan-details">
-                            <i class="fas fa-chevron-down me-2"></i>View Details
+                            <i class="fas fa-chevron-down me-2"></i>View Detailed Responsibilities
                         </button>
                         
                         <div id="setaragan-details" class="experience-details">
                             <div class="details-content">
                                 <div class="detail-item">
-                                    <h5>Project Achievements</h5>
+                                    <h5>Network Security & Infrastructure</h5>
                                     <ul>
-                                        <li>Successfully deployed EMI platform within 4-month timeframe</li>
-                                        <li>Achieved PCI DSS Level 1 compliance certification</li>
-                                        <li>Implemented secure payment gateway processing $5M+ monthly</li>
-                                        <li>Reduced transaction processing time by 70%</li>
+                                        <li>Installed and configured pfSense firewall for enhanced network security</li>
+                                        <li>Implemented security measures by creating aliases and allowing specific ports</li>
+                                        <li>Installed and configured AdGuard Home for content filtering</li>
+                                        <li>Conducted regular monitoring and maintenance of pfSense firewall</li>
                                     </ul>
                                 </div>
                                 
                                 <div class="detail-item">
-                                    <h5>Security Measures</h5>
+                                    <h5>Project Management</h5>
                                     <ul>
-                                        <li>Implemented end-to-end encryption for all financial transactions</li>
-                                        <li>Deployed SIEM solution for real-time threat monitoring</li>
-                                        <li>Established multi-factor authentication for all admin access</li>
-                                        <li>Conducted regular penetration testing and vulnerability assessments</li>
+                                        <li>Manage technical projects from planning and budgeting to implementation</li>
+                                        <li>Coordinate with stakeholders and oversee project timelines</li>
+                                        <li>Train and develop technical staff</li>
+                                        <li>Prepare technical documentation and knowledge bases</li>
                                     </ul>
                                 </div>
                                 
                                 <div class="detail-item">
-                                    <h5>Technologies Used</h5>
-                                    <div class="d-flex flex-wrap gap-2 mt-2">
-                                        <span class="badge bg-light text-dark">PCI DSS Compliance</span>
-                                        <span class="badge bg-light text-dark">Payment Gateways</span>
-                                        <span class="badge bg-light text-dark">SIEM Solutions</span>
-                                        <span class="badge bg-light text-dark">Encryption Technologies</span>
-                                        <span class="badge bg-light text-dark">Financial APIs</span>
-                                        <span class="badge bg-light text-dark">AWS Cloud</span>
-                                    </div>
+                                    <h5>Additional Responsibilities</h5>
+                                    <ul>
+                                        <li>Deployed QuickBooks for managing accounting processes</li>
+                                        <li>Implemented and managed TSpIus for remote desktop services</li>
+                                        <li>Set up and maintained OpenVPN for secure remote access</li>
+                                        <li>Deployed and managed ntopng for network traffic analysis</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -804,56 +805,44 @@
                 
                 <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="experience-card h-100">
-                        <span class="experience-period">Feb 2023 – Oct 2023</span>
+                        <span class="experience-period">February 2023 – October 2023</span>
                         <h3 class="h4 mb-3">IT Officer</h3>
                         <h4 class="h5 text-primary mb-3">Brightway Consultancy</h4>
                         
                         <p class="mb-3">
-                            Managed complete IT infrastructure and provided strategic technology guidance for a growing consultancy firm.
+                            Manage and oversee the company's network infrastructure, operations, security and user support functions. Ensure smooth network performance, compliance with security standards, and around-the-clock technical support.
                         </p>
                         
                         <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-angle-right me-2"></i>Designed and implemented secure network infrastructure</li>
-                            <li class="mb-2"><i class="fas fa-angle-right me-2"></i>Managed Windows/Linux server environments</li>
-                            <li class="mb-2"><i class="fas fa-angle-right me-2"></i>Provided technical support for 150+ users</li>
+                            <li class="mb-2"><i class="fas fa-angle-right me-2"></i>Manage LAN/WAN networks and network security systems</li>
+                            <li class="mb-2"><i class="fas fa-angle-right me-2"></i>Establish network specifications and configurations</li>
+                            <li class="mb-2"><i class="fas fa-angle-right me-2"></i>Conduct training programs and provide user support</li>
                         </ul>
                         
                         <button class="btn-details view-details-btn" data-target="brightway-details">
-                            <i class="fas fa-chevron-down me-2"></i>View Details
+                            <i class="fas fa-chevron-down me-2"></i>View Detailed Responsibilities
                         </button>
                         
                         <div id="brightway-details" class="experience-details">
                             <div class="details-content">
                                 <div class="detail-item">
-                                    <h5>Infrastructure Improvements</h5>
+                                    <h5>Network Management</h5>
                                     <ul>
-                                        <li>Migrated legacy systems to modern cloud-based solutions</li>
-                                        <li>Implemented centralized user management with Active Directory</li>
-                                        <li>Reduced IT operational costs by 35% through optimization</li>
-                                        <li>Improved network reliability from 95% to 99.5% uptime</li>
+                                        <li>Managing LAN/WAN networks and network security systems</li>
+                                        <li>Establishing network specifications and configurations</li>
+                                        <li>Securing network access, monitoring, and evaluation</li>
+                                        <li>Upgrading network infrastructure and implementing enhancements</li>
                                     </ul>
                                 </div>
                                 
                                 <div class="detail-item">
-                                    <h5>User Support & Training</h5>
+                                    <h5>User Support & Administration</h5>
                                     <ul>
-                                        <li>Reduced average ticket resolution time from 48 to 8 hours</li>
-                                        <li>Implemented ITIL-based service desk with SLA tracking</li>
-                                        <li>Conducted cybersecurity awareness training for all staff</li>
-                                        <li>Developed knowledge base with 200+ solutions articles</li>
+                                        <li>Conducting training programs and providing user support</li>
+                                        <li>Providing 24/7 critical support and technical assistance</li>
+                                        <li>Maintaining inventory and documentation of equipment</li>
+                                        <li>Surveying and monitoring network operations</li>
                                     </ul>
-                                </div>
-                                
-                                <div class="detail-item">
-                                    <h5>Technologies Used</h5>
-                                    <div class="d-flex flex-wrap gap-2 mt-2">
-                                        <span class="badge bg-light text-dark">Active Directory</span>
-                                        <span class="badge bg-light text-dark">Office 365</span>
-                                        <span class="badge bg-light text-dark">Azure AD</span>
-                                        <span class="badge bg-light text-dark">Sophos Firewall</span>
-                                        <span class="badge bg-light text-dark">VMware ESXi</span>
-                                        <span class="badge bg-light text-dark">ITIL Framework</span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -865,37 +854,47 @@
             <div class="row">
                 <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="experience-card h-100">
-                        <span class="experience-period">Sept 2022 – Jan 2023</span>
+                        <span class="experience-period">September 2022 – January 2023</span>
                         <h3 class="h4 mb-3">IT Consultant</h3>
                         <h4 class="h5 text-primary mb-3">DAWIOIL LTD</h4>
                         
                         <p class="mb-3">
-                            Provided expert guidance on IT infrastructure optimization and security enhancements for oil industry client.
+                            Evaluate clients' existing IT infrastructure and provide expert guidance, solutions and support to optimize systems, enhance security, ensure compliance and empower users.
                         </p>
                         
                         <button class="btn-details view-details-btn" data-target="dawioil-details">
-                            <i class="fas fa-chevron-down me-2"></i>View Details
+                            <i class="fas fa-chevron-down me-2"></i>View Detailed Responsibilities
                         </button>
                         
                         <div id="dawioil-details" class="experience-details">
                             <div class="details-content">
                                 <div class="detail-item">
-                                    <h5>Consulting Achievements</h5>
+                                    <h5>Consulting Services</h5>
                                     <ul>
-                                        <li>Conducted comprehensive IT infrastructure assessment</li>
-                                        <li>Developed 3-year technology roadmap with ROI analysis</li>
-                                        <li>Recommended security enhancements reducing breach risk by 80%</li>
-                                        <li>Implemented network segmentation for critical SCADA systems</li>
+                                        <li>Analyzed existing IT infrastructure for optimization opportunities</li>
+                                        <li>Evaluated and optimized Windows infrastructure focusing on Windows Servers, AD, DNS, DHCP</li>
+                                        <li>Developed and implemented IT policies to ensure data security and reliability</li>
+                                        <li>Configured firewalls and security tools to enhance system protection</li>
                                     </ul>
                                 </div>
                                 
                                 <div class="detail-item">
-                                    <h5>Industry-Specific Solutions</h5>
+                                    <h5>Training & Support</h5>
                                     <ul>
-                                        <li>Designed secure remote access for field operations</li>
-                                        <li>Implemented OT (Operational Technology) security measures</li>
-                                        <li>Developed disaster recovery plan for critical operations</li>
-                                        <li>Established compliance with industry regulations</li>
+                                        <li>Provided training and support for new software and technology tools</li>
+                                        <li>Empowered staff to effectively manage Windows-based systems</li>
+                                        <li>Ensured adherence to industry standards by monitoring and resolving IT issues</li>
+                                        <li>Minimized system downtime through proactive management</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="detail-item">
+                                    <h5>Additional Responsibilities</h5>
+                                    <ul>
+                                        <li>Collaborated with department heads to define technical requirements</li>
+                                        <li>Aligned technology solutions with organizational objectives</li>
+                                        <li>Kept up to date with emerging technologies and industry trends</li>
+                                        <li>Advised on Veeam Backup implementation for data protection</li>
                                     </ul>
                                 </div>
                             </div>
@@ -905,50 +904,89 @@
                 
                 <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="400">
                     <div class="experience-card h-100">
-                        <span class="experience-period">2012 – 2022</span>
-                        <h3 class="h4 mb-3">Previous Leadership Roles</h3>
-                        <h4 class="h5 text-primary mb-3">Various Organizations</h4>
+                        <span class="experience-period">June 2012 – August 2022</span>
+                        <h3 class="h4 mb-3">Previous IT Leadership Roles</h3>
+                        <h4 class="h5 text-primary mb-3">Multiple Organizations</h4>
                         
                         <p class="mb-3">
-                            10 years of progressive IT leadership and technical roles across multiple sectors.
+                            10+ years of progressive experience in IT management, infrastructure design, and team leadership across educational, pharmaceutical, and corporate sectors.
                         </p>
                         
                         <button class="btn-details view-details-btn" data-target="previous-details">
-                            <i class="fas fa-chevron-down me-2"></i>View Details
+                            <i class="fas fa-chevron-down me-2"></i>View Previous Roles
                         </button>
                         
                         <div id="previous-details" class="experience-details">
                             <div class="details-content">
                                 <div class="detail-item">
-                                    <h5>Key Achievements (2012-2022)</h5>
+                                    <h5>Key Previous Positions</h5>
                                     <ul>
-                                        <li>Led migration of 500+ users to Office 365 (2018)</li>
-                                        <li>Designed and deployed enterprise VoIP system (2017)</li>
-                                        <li>Implemented first cybersecurity framework (2015)</li>
-                                        <li>Managed $2M IT budget across multiple projects (2016-2020)</li>
+                                        <li><strong>Straun Pharma</strong> - IT Officer (March 2022 – August 2022)</li>
+                                        <li><strong>Mashal University</strong> - CS Lecturer & Head of IT Department (Oct 2019 – Feb 2021)</li>
+                                        <li><strong>Zippy Link</strong> - IT Manager (Aug 2019 – Sep 2019)</li>
+                                        <li><strong>Muslim English Language Institute</strong> - IT Manager (April 2016 – August 2019)</li>
+                                        <li><strong>DAWIOIL</strong> - ICT & ERP Manager (June 2012 – April 2016)</li>
                                     </ul>
                                 </div>
                                 
                                 <div class="detail-item">
-                                    <h5>Career Progression</h5>
+                                    <h5>Career Highlights</h5>
                                     <ul>
-                                        <li>IT Support Specialist → System Administrator → IT Manager</li>
-                                        <li>Managed teams from 2 to 15 members</li>
-                                        <li>Budget responsibility from $50K to $2M annually</li>
-                                        <li>Project scope from departmental to enterprise-wide</li>
+                                        <li>Managed IT infrastructure for educational institutions with 1000+ users</li>
+                                        <li>Implemented cybersecurity frameworks across multiple organizations</li>
+                                        <li>Led migration projects to cloud and virtualization platforms</li>
+                                        <li>Developed and deployed custom Management Information Systems</li>
+                                        <li>Trained and mentored IT teams and technical staff</li>
                                     </ul>
                                 </div>
                                 
                                 <div class="detail-item">
-                                    <h5>Key Skills Developed</h5>
-                                    <div class="d-flex flex-wrap gap-2 mt-2">
-                                        <span class="badge bg-light text-dark">Strategic Planning</span>
-                                        <span class="badge bg-light text-dark">Budget Management</span>
-                                        <span class="badge bg-light text-dark">Vendor Negotiation</span>
-                                        <span class="badge bg-light text-dark">Team Building</span>
-                                        <span class="badge bg-light text-dark">Project Management</span>
-                                        <span class="badge bg-light text-dark">Risk Assessment</span>
-                                    </div>
+                                    <h5>Major Projects Completed</h5>
+                                    <ul>
+                                        <li>ETISALAT Telecom: Ubuntu Server Installation & Firewall Configuration</li>
+                                        <li>MELI MIS Project: Odoo-based Management Information System</li>
+                                        <li>NIDO NGO: Windows Infrastructure Implementation</li>
+                                        <li>AWN Projects: Comprehensive Network Administration</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Experience Timeline Summary -->
+            <div class="row mt-5">
+                <div class="col-12" data-aos="fade-up">
+                    <div class="experience-card">
+                        <h3 class="h4 mb-4 text-center">13+ Years Experience Timeline</h3>
+                        <div class="row">
+                            <div class="col-md-3 col-6 text-center mb-4">
+                                <div class="stats-card">
+                                    <div class="stats-number">2012-2016</div>
+                                    <div class="stats-label">ICT & ERP Management</div>
+                                    <p class="small mt-2">DAWIOIL LTD - Building foundational IT systems</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 text-center mb-4">
+                                <div class="stats-card">
+                                    <div class="stats-number">2016-2019</div>
+                                    <div class="stats-label">IT Management</div>
+                                    <p class="small mt-2">Educational & Corporate Infrastructure</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 text-center mb-4">
+                                <div class="stats-card">
+                                    <div class="stats-number">2019-2022</div>
+                                    <div class="stats-label">Leadership & Consulting</div>
+                                    <p class="small mt-2">University & Corporate Consulting Roles</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 text-center mb-4">
+                                <div class="stats-card">
+                                    <div class="stats-number">2022-2025</div>
+                                    <div class="stats-label">Senior Leadership</div>
+                                    <p class="small mt-2">Complex Infrastructure & Security Management</p>
                                 </div>
                             </div>
                         </div>
@@ -964,98 +1002,170 @@
             <div class="text-center mb-5">
                 <h2 class="section-title" data-aos="fade-up">Technical Expertise</h2>
                 <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                    Comprehensive skill set covering infrastructure, security, and management domains
+                    Comprehensive skill set developed over 13+ years covering infrastructure, security, and management domains
                 </p>
             </div>
             
             <div class="row">
+                <!-- Firewall & Network Security -->
                 <div class="col-lg-6 mb-4" data-aos="fade-right">
                     <div class="experience-card h-100">
-                        <h3 class="h4 mb-4">Security & Networking</h3>
+                        <h3 class="h4 mb-4">Firewall & Network Security</h3>
                         
                         <div class="skill-item">
                             <div class="d-flex justify-content-between mb-1">
-                                <span class="skill-name">pfSense Firewall & Security</span>
-                                <span>96%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" style="width: 96%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span class="skill-name">Network Design & Architecture</span>
+                                <span class="skill-name">pfSense Firewall</span>
                                 <span>95%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-level" style="width: 95%"></div>
+                            </div>
+                            <div class="mt-2">
+                                <small class="text-muted">13 years experience: Advanced configurations, pfBlockerNG, IPS/IDS, VPN, CrowdSec</small>
                             </div>
                         </div>
                         
                         <div class="skill-item">
                             <div class="d-flex justify-content-between mb-1">
                                 <span class="skill-name">Cisco Switching & Routing</span>
-                                <span>94%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" style="width: 94%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span class="skill-name">Cybersecurity Implementation</span>
                                 <span>92%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-level" style="width: 92%"></div>
                             </div>
+                            <div class="mt-2">
+                                <small class="text-muted">12+ years experience: VLANs, STP, LACP, Port Security, ACLs, DHCP Snooping</small>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="skill-name">Mikrotik RouterOS</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%"></div>
+                            </div>
+                            <div class="mt-2">
+                                <small class="text-muted">10+ years experience: Firewall rules, VPN, Bandwidth Management, Hotspot</small>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="skill-name">Sophos & Cyberoam Firewalls</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 88%"></div>
+                            </div>
+                            <div class="mt-2">
+                                <small class="text-muted">8+ years experience: Firewall policies, IDP, Web filtering, VPN protocols, WAF</small>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
+                <!-- Server & Infrastructure Management -->
                 <div class="col-lg-6 mb-4" data-aos="fade-left">
                     <div class="experience-card h-100">
-                        <h3 class="h4 mb-4">Infrastructure & Management</h3>
+                        <h3 class="h4 mb-4">Server & Infrastructure Management</h3>
                         
                         <div class="skill-item">
                             <div class="d-flex justify-content-between mb-1">
                                 <span class="skill-name">Windows Server Administration</span>
-                                <span>95%</span>
+                                <span>96%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-level" style="width: 95%"></div>
+                                <div class="skill-level" style="width: 96%"></div>
+                            </div>
+                            <div class="mt-2">
+                                <small class="text-muted">13+ years experience: 2003-2019, AD, DNS, DHCP, GPO, RDS, Failover Clustering</small>
                             </div>
                         </div>
                         
                         <div class="skill-item">
                             <div class="d-flex justify-content-between mb-1">
                                 <span class="skill-name">Virtualization (Proxmox, Hyper-V)</span>
-                                <span>93%</span>
+                                <span>94%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-level" style="width: 93%"></div>
+                                <div class="skill-level" style="width: 94%"></div>
+                            </div>
+                            <div class="mt-2">
+                                <small class="text-muted">10+ years experience: VM deployment, Cluster management, Live Migration, Backup</small>
                             </div>
                         </div>
                         
                         <div class="skill-item">
                             <div class="d-flex justify-content-between mb-1">
                                 <span class="skill-name">Linux Server Management</span>
-                                <span>91%</span>
+                                <span>89%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-level" style="width: 91%"></div>
+                                <div class="skill-level" style="width: 89%"></div>
+                            </div>
+                            <div class="mt-2">
+                                <small class="text-muted">10+ years experience: Ubuntu, Red Hat, Debian, Server hardening</small>
                             </div>
                         </div>
                         
                         <div class="skill-item">
                             <div class="d-flex justify-content-between mb-1">
-                                <span class="skill-name">Project & Team Leadership</span>
-                                <span>90%</span>
+                                <span class="skill-name">Backup & Disaster Recovery</span>
+                                <span>93%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-level" style="width: 90%"></div>
+                                <div class="skill-level" style="width: 93%"></div>
+                            </div>
+                            <div class="mt-2">
+                                <small class="text-muted">12+ years experience: Veeam Backup, Disaster Recovery Planning</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Skills Row -->
+            <div class="row mt-4">
+                <div class="col-12" data-aos="fade-up">
+                    <div class="experience-card">
+                        <h3 class="h4 mb-4">Additional Technical Skills (13+ Years Experience)</h3>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <h5 class="h6 mb-2">Monitoring Tools</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge bg-secondary">Zabbix</span>
+                                    <span class="badge bg-secondary">ntopng</span>
+                                    <span class="badge bg-secondary">Snort</span>
+                                    <span class="badge bg-secondary">CrowdSec</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <h5 class="h6 mb-2">VPN Technologies</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge bg-secondary">OpenVPN</span>
+                                    <span class="badge bg-secondary">Wireguard</span>
+                                    <span class="badge bg-secondary">IPsec</span>
+                                    <span class="badge bg-secondary">Zerotier</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <h5 class="h6 mb-2">Web & ePanel</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge bg-secondary">ePanel/WHM</span>
+                                    <span class="badge bg-secondary">DNS Management</span>
+                                    <span class="badge bg-secondary">Web Hosting</span>
+                                    <span class="badge bg-secondary">SSL Certificates</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <h5 class="h6 mb-2">VOIP & Communication</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge bg-secondary">Elastix Server</span>
+                                    <span class="badge bg-secondary">PBX Management</span>
+                                    <span class="badge bg-secondary">SIP Trunks</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1070,35 +1180,97 @@
             <div class="text-center mb-5">
                 <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
                 <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                    A selection of key projects that demonstrate my expertise and impact.
+                    Key projects demonstrating 13+ years of technical expertise and implementation capabilities
                 </p>
             </div>
+            
             <div class="row">
+                <!-- Project 1 -->
                 <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="experience-card text-center">
+                    <div class="experience-card text-center h-100">
                         <div class="contact-icon mx-auto mb-3">
-                            <i class="fas fa-shield-alt"></i>
+                            <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <h4 class="h5 mb-3">EMI Security Framework</h4>
-                        <p class="small">Designed and deployed a comprehensive security framework for an Electronic Money Institution, ensuring full PCI DSS compliance and protecting sensitive financial data.</p>
+                        <h4 class="h5 mb-3">Educational Complex IT Overhaul</h4>
+                        <p class="small mb-3">Complete IT infrastructure redesign for Moraa Educational Complex with 2000+ users</p>
+                        <div class="d-flex flex-wrap gap-2 justify-content-center">
+                            <span class="badge bg-light text-dark">Proxmox</span>
+                            <span class="badge bg-light text-dark">pfSense</span>
+                            <span class="badge bg-light text-dark">Zabbix</span>
+                            <span class="badge bg-light text-dark">AdGuard</span>
+                        </div>
                     </div>
                 </div>
+                
+                <!-- Project 2 -->
                 <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="experience-card text-center">
+                    <div class="experience-card text-center h-100">
                         <div class="contact-icon mx-auto mb-3">
-                            <i class="fas fa-network-wired"></i>
+                            <i class="fas fa-money-bill-wave"></i>
                         </div>
-                        <h4 class="h5 mb-3">Campus Network Overhaul</h4>
-                        <p class="small">Led a complete network redesign for an educational complex, upgrading to a high-speed, secure, and scalable infrastructure supporting over 2,000 users.</p>
+                        <h4 class="h5 mb-3">Electronic Money Institution</h4>
+                        <p class="small mb-3">Technical supervision for EMI project with financial transaction security</p>
+                        <div class="d-flex flex-wrap gap-2 justify-content-center">
+                            <span class="badge bg-light text-dark">pfSense</span>
+                            <span class="badge bg-light text-dark">QuickBooks</span>
+                            <span class="badge bg-light text-dark">OpenVPN</span>
+                            <span class="badge bg-light text-dark">E-Topup</span>
+                        </div>
                     </div>
                 </div>
+                
+                <!-- Project 3 -->
                 <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="experience-card text-center">
+                    <div class="experience-card text-center h-100">
                         <div class="contact-icon mx-auto mb-3">
-                            <i class="fas fa-server"></i>
+                            <i class="fas fa-university"></i>
                         </div>
-                        <h4 class="h5 mb-3">Proxmox Virtualization</h4>
-                        <p class="small">Migrated 50+ physical servers to a Proxmox VE virtualized environment, significantly reducing hardware costs and improving disaster recovery capabilities.</p>
+                        <h4 class="h5 mb-3">University IT Department Leadership</h4>
+                        <p class="small mb-3">Head of IT Department at Mashal University with academic program development</p>
+                        <div class="d-flex flex-wrap gap-2 justify-content-center">
+                            <span class="badge bg-light text-dark">Academic IT</span>
+                            <span class="badge bg-light text-dark">LMS</span>
+                            <span class="badge bg-light text-dark">Research Systems</span>
+                            <span class="badge bg-light text-dark">Student Services</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Second Row of Projects -->
+            <div class="row mt-4">
+                <div class="col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="experience-card h-100">
+                        <h4 class="h5 mb-3">MELI MIS Project</h4>
+                        <p class="small mb-3">Developed Management Information System for Muslim English Language Institute using Odoo platform</p>
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            <span class="badge bg-secondary">Odoo Platform</span>
+                            <span class="badge bg-secondary">MIS Development</span>
+                            <span class="badge bg-secondary">Project Management</span>
+                        </div>
+                        <ul class="small">
+                            <li>Researched and identified development company in India</li>
+                            <li>Collaborated with MELI staff to tailor system to specific needs</li>
+                            <li>Provided comprehensive training for effective utilization</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="experience-card h-100">
+                        <h4 class="h5 mb-3">NIDO NGO Windows Infrastructure</h4>
+                        <p class="small mb-3">Implemented critical Windows infrastructure for seamless communication and secure resource access</p>
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            <span class="badge bg-secondary">Windows Server</span>
+                            <span class="badge bg-secondary">Active Directory</span>
+                            <span class="badge bg-secondary">Group Policy</span>
+                            <span class="badge bg-secondary">DNS/DHCP</span>
+                        </div>
+                        <ul class="small">
+                            <li>Installed WDS, WSUS, NLB, SQL Server, Print and File Servers</li>
+                            <li>Managed DNS and DHCP services for efficient network operations</li>
+                            <li>Utilized Group Policy Management for enhanced security</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -1111,7 +1283,7 @@
             <div class="text-center mb-5">
                 <h2 class="section-title" data-aos="fade-up">Contact Me</h2>
                 <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                    Let's connect and discuss opportunities
+                    Available for consulting opportunities and senior IT infrastructure roles
                 </p>
             </div>
             
@@ -1149,6 +1321,36 @@
                     </div>
                 </div>
             </div>
+            
+            <div class="row mt-5">
+                <div class="col-12" data-aos="fade-up">
+                    <div class="experience-card text-center">
+                        <h3 class="h4 mb-4">Languages Spoken</h3>
+                        <div class="row">
+                            <div class="col-md-2 col-6 mb-3">
+                                <h5 class="h6 mb-2">English</h5>
+                                <span class="badge bg-success">Fluent</span>
+                            </div>
+                            <div class="col-md-2 col-6 mb-3">
+                                <h5 class="h6 mb-2">Phasto</h5>
+                                <span class="badge bg-success">Fluent</span>
+                            </div>
+                            <div class="col-md-2 col-6 mb-3">
+                                <h5 class="h6 mb-2">Dari</h5>
+                                <span class="badge bg-info">Good</span>
+                            </div>
+                            <div class="col-md-2 col-6 mb-3">
+                                <h5 class="h6 mb-2">Hindi</h5>
+                                <span class="badge bg-success">Fluent</span>
+                            </div>
+                            <div class="col-md-2 col-6 mb-3">
+                                <h5 class="h6 mb-2">Urdu</h5>
+                                <span class="badge bg-success">Fluent</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1158,17 +1360,24 @@
             <div class="row">
                 <div class="col-lg-4 mb-4">
                     <h5 class="mb-3">Asar Khan</h5>
-                    <p>Senior IT Infrastructure & Cybersecurity Expert with 13+ years of experience delivering reliable IT solutions.</p>
+                    <p class="small">Senior IT Infrastructure & Cybersecurity Expert with 13+ years of experience delivering reliable IT solutions across diverse industries.</p>
+                    <div class="mt-3">
+                        <span class="badge bg-primary me-2">IT Infrastructure</span>
+                        <span class="badge bg-success me-2">Cybersecurity</span>
+                        <span class="badge bg-info me-2">Network Design</span>
+                        <span class="badge bg-warning me-2">13+ Years Exp</span>
+                    </div>
                 </div>
                 
                 <div class="col-lg-4 mb-4">
                     <h5 class="mb-3">Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#home">Home</a></li>
-                        <li class="mb-2"><a href="#about">About</a></li>
-                        <li class="mb-2"><a href="#experience">Experience</a></li>
-                        <li class="mb-2"><a href="#skills">Skills</a></li>
-                        <li class="mb-2"><a href="#contact">Contact</a></li>
+                        <li class="mb-2"><a href="#home"><i class="fas fa-chevron-right me-2 small"></i>Home</a></li>
+                        <li class="mb-2"><a href="#about"><i class="fas fa-chevron-right me-2 small"></i>About</a></li>
+                        <li class="mb-2"><a href="#experience"><i class="fas fa-chevron-right me-2 small"></i>Experience</a></li>
+                        <li class="mb-2"><a href="#skills"><i class="fas fa-chevron-right me-2 small"></i>Skills</a></li>
+                        <li class="mb-2"><a href="#projects"><i class="fas fa-chevron-right me-2 small"></i>Projects</a></li>
+                        <li class="mb-2"><a href="#contact"><i class="fas fa-chevron-right me-2 small"></i>Contact</a></li>
                     </ul>
                 </div>
                 
@@ -1180,11 +1389,20 @@
                         <a href="#"><i class="fab fa-github"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                     </div>
+                    <div class="mt-4">
+                        <p class="small mb-2"><i class="fas fa-certificate me-2"></i>Certifications:</p>
+                        <span class="badge bg-secondary me-1 mb-1">USAID Project Management</span>
+                        <span class="badge bg-secondary me-1 mb-1">MCSA/MCSE</span>
+                        <span class="badge bg-secondary me-1 mb-1">CCNA</span>
+                        <span class="badge bg-secondary me-1 mb-1">Linux</span>
+                        <span class="badge bg-secondary me-1 mb-1">A+/N+</span>
+                    </div>
                 </div>
             </div>
             
             <div class="text-center pt-4 mt-4 border-top border-secondary">
                 <p class="mb-0">© 2024 Asar Khan. All Rights Reserved.</p>
+                <p class="small mt-2">Curriculum Vitae: 2006 - 2025 | 13+ Years Professional Experience</p>
             </div>
         </div>
     </footer>
@@ -1278,7 +1496,9 @@
                         this.innerHTML = '<i class="fas fa-chevron-up me-2"></i>Hide Details';
                         
                         // Scroll to show the expanded content
-                        detailsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        setTimeout(() => {
+                            detailsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }, 300);
                     }
                 });
             });
