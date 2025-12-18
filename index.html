@@ -18,14 +18,37 @@
     <meta property="og:image" content="https://raw.githubusercontent.com/asar23314/portfolio/main/unnamed%20(3).jpg">
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://asarkhan.com/">
-    <meta property="twitter:title" content="Asar Khan | Senior IT Infrastructure & Cybersecurity Expert">
-    <meta property="twitter:description" content="13+ years of IT infrastructure and cybersecurity experience. Expert in network design, security implementation, and team leadership.">
-    <meta property="twitter:image" content="https://raw.githubusercontent.com/asar23314/portfolio/main/unnamed%20(3).jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://asarkhan.com/">
+    <meta name="twitter:title" content="Asar Khan | Senior IT Infrastructure & Cybersecurity Expert">
+    <meta name="twitter:description" content="13+ years of IT infrastructure and cybersecurity experience. Expert in network design, security implementation, and team leadership.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/asar23314/portfolio/main/unnamed%20(3).jpg">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://asarkhan.com/">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Asar Khan",
+        "jobTitle": "Senior IT Infrastructure & Cybersecurity Expert",
+        "description": "Experienced IT professional with over 13 years of expertise in optimizing infrastructure, enhancing security, and ensuring seamless operations.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kabul",
+            "addressCountry": "Afghanistan"
+        },
+        "email": "asar23@gmail.com",
+        "telephone": "+93-731-826-346",
+        "sameAs": [
+            "https://linkedin.com/in/asarkhan-afg"
+        ],
+        "workLocation": "Kabul, Afghanistan",
+        "knowsAbout": ["IT Infrastructure", "Cybersecurity", "Network Security", "Server Administration", "Virtualization"]
+    }
+    </script>
     
     <!-- Preload critical resources -->
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
@@ -244,7 +267,7 @@
             color: var(--dark-color);
         }
 
-        /* DETAILS BUTTON - Improved for Mobile -->
+        /* DETAILS BUTTON - Improved for Mobile */
         .btn-details {
             background: transparent;
             color: var(--primary-color);
@@ -268,7 +291,7 @@
             outline-offset: 2px;
         }
         
-        /* PROFILE CARD -->
+        /* PROFILE CARD */
         .profile-card {
             background: var(--card-bg);
             border-radius: 20px;
@@ -301,7 +324,7 @@
             font-weight: 500;
         }
         
-        /* SECTION STYLING -->
+        /* SECTION STYLING */
         .section {
             padding: 100px 0;
         }
@@ -335,7 +358,7 @@
             margin-right: auto;
         }
         
-        /* EXPERIENCE CARDS -->
+        /* EXPERIENCE CARDS */
         .experience-card {
             background: var(--card-bg);
             border-radius: 16px;
@@ -382,7 +405,7 @@
             margin-bottom: 1rem;
         }
 
-        /* DETAILS CONTENT - Improved for Mobile -->
+        /* DETAILS CONTENT - Improved for Mobile */
         .experience-details {
             max-height: 0;
             overflow: hidden;
@@ -436,7 +459,7 @@
             left: 0;
         }
 
-        /* SKILLS - Improved with Intersection Observer support -->
+        /* SKILLS - Improved with Intersection Observer support */
         .skill-item {
             margin-bottom: 1.5rem;
         }
@@ -499,7 +522,7 @@
             font-size: 1.5rem;
         }
         
-        /* FOOTER -->
+        /* FOOTER */
         footer {
             background: #060818;
             color: var(--text-color);
@@ -543,7 +566,7 @@
             border-color: var(--primary-color);
         }
         
-        /* RESPONSIVE IMPROVEMENTS -->
+        /* RESPONSIVE IMPROVEMENTS */
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.5rem;
@@ -568,7 +591,7 @@
                 padding: 12px 25px;
                 font-size: 0.9rem;
             }
-            /* Improve touch targets on mobile -->
+            /* Improve touch targets on mobile */
             .nav-link {
                 padding: 10px 15px;
                 margin: 0;
@@ -578,7 +601,7 @@
                 width: 100%;
                 margin-top: 1rem;
             }
-            /* Prevent horizontal scrolling -->
+            /* Prevent horizontal scrolling */
             .experience-details.show {
                 padding: 1rem;
                 overflow-x: hidden;
@@ -606,7 +629,7 @@
             }
         }
 
-        /* Accessibility Improvements -->
+        /* Accessibility Improvements */
         .sr-only {
             position: absolute;
             width: 1px;
@@ -619,7 +642,7 @@
             border: 0;
         }
 
-        /* Focus styles for accessibility -->
+        /* Focus styles for accessibility */
         :focus {
             outline: 2px solid var(--primary-color);
             outline-offset: 2px;
@@ -634,24 +657,24 @@
             outline-offset: 2px;
         }
 
-        /* Improve contrast for accessibility -->
+        /* Improve contrast for accessibility */
         a:hover, a:focus {
             text-decoration: underline;
         }
 
-        /* Better text contrast -->
+        /* Better text contrast */
         .text-muted {
             color: #b8c1ec !important;
             opacity: 0.8;
         }
 
-        /* Loading state -->
+        /* Loading state */
         .loading {
             opacity: 0.5;
             pointer-events: none;
         }
 
-        /* Print Styles -->
+        /* Print Styles */
         @media print {
             .navbar {
                 position: static !important;
@@ -717,13 +740,13 @@
                 text-decoration: underline;
             }
             
-            /* Hide elements not needed for print -->
+            /* Hide elements not needed for print */
             .social-links,
             .navbar-toggler {
                 display: none !important;
             }
             
-            /* Ensure good contrast for printing -->
+            /* Ensure good contrast for printing */
             body {
                 background-color: #fff !important;
                 color: #000 !important;
@@ -747,26 +770,26 @@
                 color: #000 !important;
             }
             
-            /* Add page breaks where appropriate -->
+            /* Add page breaks where appropriate */
             .section {
                 page-break-inside: avoid;
             }
             
-            /* Print URLs after links -->
+            /* Print URLs after links */
             a[href^="http"]:after {
                 content: " (" attr(href) ")";
                 font-size: 0.9em;
                 font-weight: normal;
             }
             
-            /* Don't print anchor links -->
+            /* Don't print anchor links */
             a[href^="#"]:after {
                 content: "";
             }
         }
     </style>
 </head>
-<body>
+<body class="loading">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top" aria-label="Main Navigation">
         <div class="container">
@@ -830,8 +853,9 @@
                 <div class="col-lg-5 mt-5 mt-lg-0" data-aos="fade-left">
                     <div class="profile-card">
                         <img src="https://raw.githubusercontent.com/asar23314/portfolio/main/unnamed%20(3).jpg" 
-                             alt="Asar Khan - Senior IT Infrastructure and Cybersecurity Expert" 
+                             alt="Asar Khan - Senior IT Infrastructure and Cybersecurity Expert with 13+ years of experience" 
                              class="profile-img"
+                             loading="lazy"
                              onerror="this.onerror=null; this.src='https://via.placeholder.com/400x400/0a0e27/00d4ff?text=AK';">
                         <div class="profile-content">
                             <h3 class="h5 mb-2">Asar Khan</h3>
@@ -1274,7 +1298,7 @@
                                 <span class="skill-name">Firewall Management (pfSense, Sophos, Mikrotik)</span>
                                 <span><span class="sr-only">Proficiency level</span>96%</span>
                             </div>
-                            <div class="skill-bar" role="progressbar" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill-bar" role="progressbar" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100" aria-label="Firewall Management skill level">
                                 <div class="skill-level" data-width="96%"></div>
                             </div>
                         </div>
@@ -1284,7 +1308,7 @@
                                 <span class="skill-name">Network Design & Architecture</span>
                                 <span><span class="sr-only">Proficiency level</span>95%</span>
                             </div>
-                            <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Network Design & Architecture skill level">
                                 <div class="skill-level" data-width="95%"></div>
                             </div>
                         </div>
@@ -1294,7 +1318,7 @@
                                 <span class="skill-name">Cisco Switching & Routing</span>
                                 <span><span class="sr-only">Proficiency level</span>94%</span>
                             </div>
-                            <div class="skill-bar" role="progressbar" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill-bar" role="progressbar" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100" aria-label="Cisco Switching & Routing skill level">
                                 <div class="skill-level" data-width="94%"></div>
                             </div>
                         </div>
@@ -1304,7 +1328,7 @@
                                 <span class="skill-name">Cybersecurity Implementation</span>
                                 <span><span class="sr-only">Proficiency level</span>92%</span>
                             </div>
-                            <div class="skill-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="Cybersecurity Implementation skill level">
                                 <div class="skill-level" data-width="92%"></div>
                             </div>
                         </div>
@@ -1320,7 +1344,7 @@
                                 <span class="skill-name">Windows Server Administration</span>
                                 <span><span class="sr-only">Proficiency level</span>95%</span>
                             </div>
-                            <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Windows Server Administration skill level">
                                 <div class="skill-level" data-width="95%"></div>
                             </div>
                         </div>
@@ -1330,7 +1354,7 @@
                                 <span class="skill-name">Virtualization (Proxmox, Hyper-V, KVM)</span>
                                 <span><span class="sr-only">Proficiency level</span>93%</span>
                             </div>
-                            <div class="skill-bar" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill-bar" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100" aria-label="Virtualization skill level">
                                 <div class="skill-level" data-width="93%"></div>
                             </div>
                         </div>
@@ -1340,7 +1364,7 @@
                                 <span class="skill-name">Linux Server Management</span>
                                 <span><span class="sr-only">Proficiency level</span>91%</span>
                             </div>
-                            <div class="skill-bar" role="progressbar" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill-bar" role="progressbar" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" aria-label="Linux Server Management skill level">
                                 <div class="skill-level" data-width="91%"></div>
                             </div>
                         </div>
@@ -1350,7 +1374,7 @@
                                 <span class="skill-name">Backup & Disaster Recovery (Veeam)</span>
                                 <span><span class="sr-only">Proficiency level</span>90%</span>
                             </div>
-                            <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Backup & Disaster Recovery skill level">
                                 <div class="skill-level" data-width="90%"></div>
                             </div>
                         </div>
@@ -1566,6 +1590,8 @@
             });
         } catch (error) {
             console.warn('AOS initialization failed:', error);
+            // Fallback: Add a class to indicate AOS failed
+            document.body.classList.add('aos-failed');
         }
 
         // Navbar scroll effect
@@ -1771,12 +1797,23 @@
                 skillLevels.forEach(skillLevel => {
                     observer.observe(skillLevel);
                 });
+
+                // Fallback for browsers that don't support Intersection Observer
+                if (!('IntersectionObserver' in window)) {
+                    console.warn('IntersectionObserver not supported, using fallback');
+                    document.querySelectorAll('.skill-level').forEach(skillLevel => {
+                        const width = skillLevel.getAttribute('data-width');
+                        skillLevel.style.width = width;
+                        skillLevel.classList.add('animated');
+                    });
+                }
             } catch (error) {
                 console.warn('Skill animation setup failed:', error);
                 // Fallback: animate all skill bars immediately
                 document.querySelectorAll('.skill-level').forEach(skillLevel => {
                     const width = skillLevel.getAttribute('data-width');
                     skillLevel.style.width = width;
+                    skillLevel.classList.add('animated');
                 });
             }
         }
@@ -1827,51 +1864,102 @@
         });
     </script>
 
-    <!-- Inline Service Worker script -->
+    <!-- Improved Service Worker script -->
     <script>
         // Create a simple service worker if supported
         if ('serviceWorker' in navigator) {
             const swContent = `
+                const CACHE_NAME = 'portfolio-cache-v1';
+                const urlsToCache = [
+                    '/',
+                    '/index.html',
+                    'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css',
+                    'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap',
+                    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
+                    'https://raw.githubusercontent.com/asar23314/portfolio/main/unnamed%20(3).jpg'
+                ];
+
                 self.addEventListener('install', (event) => {
                     console.log('Service Worker installing.');
+                    event.waitUntil(
+                        caches.open(CACHE_NAME)
+                            .then((cache) => {
+                                return cache.addAll(urlsToCache);
+                            })
+                    );
                     self.skipWaiting();
                 });
 
                 self.addEventListener('activate', (event) => {
                     console.log('Service Worker activating.');
+                    event.waitUntil(
+                        caches.keys().then((cacheNames) => {
+                            return Promise.all(
+                                cacheNames.map((cacheName) => {
+                                    if (cacheName !== CACHE_NAME) {
+                                        console.log('Deleting old cache:', cacheName);
+                                        return caches.delete(cacheName);
+                                    }
+                                })
+                            );
+                        })
+                    );
+                    return self.clients.claim();
                 });
 
                 self.addEventListener('fetch', (event) => {
-                    // Cache-first strategy for static assets
-                    if (event.request.url.includes('bootstrap') || 
-                        event.request.url.includes('fontawesome') ||
-                        event.request.url.includes('googleapis')) {
-                        event.respondWith(
-                            caches.match(event.request).then((response) => {
-                                return response || fetch(event.request).then((response) => {
-                                    return caches.open('portfolio-cache').then((cache) => {
-                                        cache.put(event.request, response.clone());
-                                        return response;
-                                    });
-                                });
-                            })
-                        );
+                    // Network-first strategy for dynamic content
+                    if (event.request.url.includes('api') || event.request.method !== 'GET') {
+                        return;
                     }
+                    
+                    event.respondWith(
+                        caches.match(event.request).then((response) => {
+                            // Return cached version if available
+                            if (response) {
+                                return response;
+                            }
+                            
+                            // Otherwise fetch from network
+                            return fetch(event.request).then((response) => {
+                                // Don't cache if not a valid response
+                                if (!response || response.status !== 200 || response.type !== 'basic') {
+                                    return response;
+                                }
+                                
+                                // Clone the response
+                                const responseToCache = response.clone();
+                                
+                                caches.open(CACHE_NAME).then((cache) => {
+                                    cache.put(event.request, responseToCache);
+                                });
+                                
+                                return response;
+                            });
+                        }).catch(() => {
+                            // Fallback for offline
+                            return new Response('You are offline. Please check your connection.');
+                        })
+                    );
                 });
             `;
 
             // Register the service worker
             window.addEventListener('load', () => {
-                const blob = new Blob([swContent], { type: 'application/javascript' });
-                const swURL = URL.createObjectURL(blob);
-                
-                navigator.serviceWorker.register(swURL)
-                    .then(registration => {
-                        console.log('Service Worker registered with scope:', registration.scope);
-                    })
-                    .catch(error => {
-                        console.log('Service Worker registration failed:', error);
-                    });
+                try {
+                    const blob = new Blob([swContent], { type: 'application/javascript' });
+                    const swURL = URL.createObjectURL(blob);
+                    
+                    navigator.serviceWorker.register(swURL)
+                        .then(registration => {
+                            console.log('Service Worker registered with scope:', registration.scope);
+                        })
+                        .catch(error => {
+                            console.log('Service Worker registration failed:', error);
+                        });
+                } catch (error) {
+                    console.log('Service Worker setup failed:', error);
+                }
             });
         }
     </script>
