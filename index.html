@@ -5,14 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asar Khan | Senior IT Infrastructure & Cybersecurity Expert</title>
     
-    <!-- Fixed Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒</text></svg>">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Asar Khan - Senior IT Infrastructure & Cybersecurity Expert with 13+ years experience">
-    <meta name="keywords" content="IT Infrastructure, Cybersecurity, Network Security, Afghanistan IT Expert">
-    <meta name="author" content="Asar Khan">
-    
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     
@@ -20,9 +12,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Custom CSS -->
     <style>
         :root {
             --primary-color: #2563eb;
@@ -40,25 +31,16 @@
         
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--text-color) !important; /* Force text color */
-            background: #f8fafc;
+            color: var(--text-color);
+            background: #ffffff;
             line-height: 1.6;
         }
         
-        /* Ensure all text is visible */
-        h1, h2, h3, h4, h5, h6, p, span, div, a, li {
-            color: var(--text-color) !important;
-            opacity: 1 !important;
-            visibility: visible !important;
-        }
-        
-        .text-white {
-            color: white !important;
-        }
-        
+        /* NAVBAR */
         .navbar {
-            background: white !important;
+            background: #ffffff !important;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
         }
         
         .navbar-brand {
@@ -70,6 +52,7 @@
         .nav-link {
             color: var(--text-color) !important;
             font-weight: 500;
+            margin: 0 0.5rem;
         }
         
         .nav-link:hover,
@@ -77,19 +60,19 @@
             color: var(--primary-color) !important;
         }
         
-        /* Hero Section */
+        /* HERO SECTION - FIXED BACKGROUND */
         .hero-section {
-            background: linear-gradient(135deg, var(--dark-color) 0%, #1e293b 100%);
-            color: white;
-            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+            color: white !important;
+            padding: 140px 0 80px;
             min-height: 100vh;
             display: flex;
             align-items: center;
+            position: relative;
         }
         
-        .hero-section h1,
-        .hero-section h2,
-        .hero-section p {
+        /* Force all text in hero to be white */
+        .hero-section * {
             color: white !important;
         }
         
@@ -97,6 +80,7 @@
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 1rem;
+            color: white !important;
         }
         
         .hero-subtitle {
@@ -104,6 +88,7 @@
             font-weight: 400;
             margin-bottom: 1.5rem;
             opacity: 0.9;
+            color: white !important;
         }
         
         .hero-description {
@@ -111,9 +96,10 @@
             margin-bottom: 2rem;
             opacity: 0.8;
             max-width: 600px;
+            color: white !important;
         }
         
-        /* Stats */
+        /* STATS CARDS */
         .stats-card {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 12px;
@@ -137,7 +123,7 @@
             letter-spacing: 1px;
         }
         
-        /* Buttons */
+        /* BUTTONS */
         .btn-primary-custom {
             background: var(--primary-color);
             color: white;
@@ -170,7 +156,7 @@
             color: var(--primary-color);
         }
         
-        /* Profile Card */
+        /* PROFILE CARD */
         .profile-card {
             background: white;
             border-radius: 16px;
@@ -188,9 +174,14 @@
             padding: 2rem;
         }
         
-        /* Section Styling */
+        .profile-content * {
+            color: var(--text-color) !important;
+        }
+        
+        /* SECTION STYLING */
         .section {
             padding: 80px 0;
+            background: #ffffff;
         }
         
         .section-title {
@@ -208,7 +199,7 @@
             max-width: 700px;
         }
         
-        /* Experience Cards */
+        /* EXPERIENCE CARDS */
         .experience-card {
             background: white;
             border-radius: 12px;
@@ -235,7 +226,7 @@
             margin-bottom: 1rem;
         }
         
-        /* Skills */
+        /* SKILLS */
         .skill-item {
             margin-bottom: 1.5rem;
         }
@@ -259,7 +250,7 @@
             border-radius: 5px;
         }
         
-        /* Contact */
+        /* CONTACT */
         .contact-item {
             background: white;
             border-radius: 12px;
@@ -280,16 +271,14 @@
             margin-bottom: 1rem;
         }
         
-        /* Footer */
+        /* FOOTER */
         footer {
             background: var(--dark-color);
             color: white;
             padding: 60px 0 30px;
         }
         
-        footer h5,
-        footer p,
-        footer a {
+        footer * {
             color: rgba(255, 255, 255, 0.8) !important;
         }
         
@@ -300,7 +289,7 @@
             width: 40px;
             height: 40px;
             background: rgba(255, 255, 255, 0.1);
-            color: white;
+            color: white !important;
             border-radius: 8px;
             margin-right: 10px;
             transition: all 0.3s ease;
@@ -311,7 +300,7 @@
             transform: translateY(-3px);
         }
         
-        /* Responsive */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.5rem;
@@ -327,14 +316,6 @@
             
             .section-title {
                 font-size: 2rem;
-            }
-        }
-        
-        /* Print styles for visibility */
-        @media print {
-            * {
-                color: black !important;
-                background: white !important;
             }
         }
     </style>
@@ -353,7 +334,6 @@
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -852,19 +832,13 @@
             }
         });
 
-        // Form submission
+        // Force hero section to have dark background
         document.addEventListener('DOMContentLoaded', function() {
-            // Ensure all text is visible
-            document.body.style.color = '#334155';
-            document.body.style.backgroundColor = '#f8fafc';
-            
-            // Force text visibility
-            const allElements = document.querySelectorAll('*');
-            allElements.forEach(el => {
-                el.style.color = '';
-                el.style.opacity = '1';
-                el.style.visibility = 'visible';
-            });
+            const heroSection = document.querySelector('.hero-section');
+            if (heroSection) {
+                heroSection.style.background = 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)';
+                heroSection.style.color = 'white';
+            }
         });
     </script>
 </body>
