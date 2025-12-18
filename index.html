@@ -267,7 +267,7 @@
             color: var(--dark-color);
         }
 
-        /* DETAILS BUTTON - Improved for Mobile -->
+        /* DETAILS BUTTON - Improved for Mobile */
         .btn-details {
             background: transparent;
             color: var(--primary-color);
@@ -278,7 +278,7 @@
             font-weight: 500;
             transition: all 0.3s ease;
             cursor: pointer;
-            min-height: 44px; /* Minimum touch target size for accessibility */
+            min-height: 44px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -291,7 +291,7 @@
             outline-offset: 2px;
         }
         
-        <!-- PROFILE CARD -->
+        /* PROFILE CARD */
         .profile-card {
             background: var(--card-bg);
             border-radius: 20px;
@@ -324,7 +324,7 @@
             font-weight: 500;
         }
         
-        <!-- SECTION STYLING -->
+        /* SECTION STYLING */
         .section {
             padding: 100px 0;
         }
@@ -358,7 +358,7 @@
             margin-right: auto;
         }
         
-        <!-- EXPERIENCE CARDS -->
+        /* EXPERIENCE CARDS */
         .experience-card {
             background: var(--card-bg);
             border-radius: 16px;
@@ -405,7 +405,7 @@
             margin-bottom: 1rem;
         }
 
-        <!-- DETAILS CONTENT - Improved for Mobile -->
+        /* DETAILS CONTENT - Improved for Mobile */
         .experience-details {
             max-height: 0;
             overflow: hidden;
@@ -459,7 +459,7 @@
             left: 0;
         }
 
-        <!-- SKILLS - Improved with Intersection Observer support -->
+        /* SKILLS - Improved with Intersection Observer support */
         .skill-item {
             margin-bottom: 1.5rem;
         }
@@ -485,15 +485,15 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 0; /* Start at 0, will be animated by JS */
+            width: 0;
             transition: width 1.5s ease-in-out;
         }
 
         .skill-level.animated {
-            width: var(--target-width); /* Will be set by JavaScript */
+            width: var(--target-width);
         }
 
-        <!-- CONTACT -->
+        /* CONTACT */
         .contact-item {
             background: var(--card-bg);
             border-radius: 16px;
@@ -522,7 +522,7 @@
             font-size: 1.5rem;
         }
         
-        <!-- FOOTER -->
+        /* FOOTER */
         footer {
             background: #060818;
             color: var(--text-color);
@@ -566,7 +566,7 @@
             border-color: var(--primary-color);
         }
         
-        <!-- RESPONSIVE IMPROVEMENTS -->
+        /* RESPONSIVE IMPROVEMENTS */
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.5rem;
@@ -591,7 +591,6 @@
                 padding: 12px 25px;
                 font-size: 0.9rem;
             }
-            <!-- Improve touch targets on mobile -->
             .nav-link {
                 padding: 10px 15px;
                 margin: 0;
@@ -601,7 +600,6 @@
                 width: 100%;
                 margin-top: 1rem;
             }
-            <!-- Prevent horizontal scrolling -->
             .experience-details.show {
                 padding: 1rem;
                 overflow-x: hidden;
@@ -629,7 +627,7 @@
             }
         }
 
-        <!-- Accessibility Improvements -->
+        /* Accessibility Improvements */
         .sr-only {
             position: absolute;
             width: 1px;
@@ -642,7 +640,7 @@
             border: 0;
         }
 
-        <!-- Focus styles for accessibility -->
+        /* Focus styles for accessibility */
         :focus {
             outline: 2px solid var(--primary-color);
             outline-offset: 2px;
@@ -657,24 +655,24 @@
             outline-offset: 2px;
         }
 
-        <!-- Improve contrast for accessibility -->
+        /* Improve contrast for accessibility */
         a:hover, a:focus {
             text-decoration: underline;
         }
 
-        <!-- Better text contrast -->
+        /* Better text contrast */
         .text-muted {
             color: #b8c1ec !important;
             opacity: 0.8;
         }
 
-        <!-- Loading state -->
+        /* Loading state */
         .loading {
             opacity: 0.5;
             pointer-events: none;
         }
 
-        <!-- Print Styles -->
+        /* Print Styles */
         @media print {
             .navbar {
                 position: static !important;
@@ -740,13 +738,11 @@
                 text-decoration: underline;
             }
             
-            <!-- Hide elements not needed for print -->
             .social-links,
             .navbar-toggler {
                 display: none !important;
             }
             
-            <!-- Ensure good contrast for printing -->
             body {
                 background-color: #fff !important;
                 color: #000 !important;
@@ -770,19 +766,16 @@
                 color: #000 !important;
             }
             
-            <!-- Add page breaks where appropriate -->
             .section {
                 page-break-inside: avoid;
             }
             
-            <!-- Print URLs after links -->
             a[href^="http"]:after {
                 content: " (" attr(href) ")";
                 font-size: 0.9em;
                 font-weight: normal;
             }
             
-            <!-- Don't print anchor links -->
             a[href^="#"]:after {
                 content: "";
             }
