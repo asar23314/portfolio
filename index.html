@@ -667,46 +667,6 @@
             font-size: 1.5rem;
         }
 
-        /* Contact Form */
-        .contact-form {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-        }
-
-        .form-control {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-color);
-            padding: 12px 15px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .form-control:focus {
-            background: var(--card-bg);
-            border-color: var(--primary-color);
-            color: var(--text-color);
-            box-shadow: 0 0 0 0.25rem rgba(0, 212, 255, 0.25);
-        }
-
-        [data-theme="light"] .form-control:focus {
-            box-shadow: 0 0 0 0.25rem rgba(0, 102, 204, 0.25);
-        }
-
-        .form-control::placeholder {
-            color: var(--text-color);
-            opacity: 0.7;
-        }
-
-        .form-label {
-            color: var(--heading-color);
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
         /* FOOTER */
         footer {
             background: #060818;
@@ -1776,66 +1736,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Contact Form -->
-                <div class="row mt-5">
-                    <div class="col-lg-8 mx-auto" data-aos="fade-up">
-                        <div class="contact-form">
-                            <form id="contactForm" action="https://formspree.io/f/xgvvblja" method="POST" novalidate>
-                                <input type="hidden" name="_subject" value="New Message from Asar Khan Portfolio">
-                                
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="name" class="form-label">Name *</label>
-                                        <input type="text" class="form-control" id="name" name="name" required>
-                                        <div class="invalid-feedback">
-                                            Please enter your name.
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="email" class="form-label">Your Email *</label>
-                                        <input type="email" class="form-control" id="email" name="email" required>
-                                        <div class="invalid-feedback">
-                                            Please enter a valid email address.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="subject" class="form-label">Subject *</label>
-                                    <input type="text" class="form-control" id="subject" name="subject" required>
-                                    <div class="invalid-feedback">
-                                        Please enter a subject.
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="message" class="form-label">Message *</label>
-                                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                                    <div class="invalid-feedback">
-                                        Please enter your message.
-                                    </div>
-                                </div>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn-custom btn-primary-custom">
-                                        <i class="fas fa-paper-plane me-2"></i>Send Message
-                                    </button>
-                                </div>
-                                <div id="formMessage" class="mt-3" style="display: none;"></div>
-                            </form>
-                            
-                            <div class="mt-4 text-center">
-                                <p class="small mb-2">Or contact me directly:</p>
-                                <p class="mb-1">
-                                    <i class="fas fa-envelope me-2"></i>
-                                    <a href="mailto:asar23@gmail.com">asar23@gmail.com</a>
-                                </p>
-                                <p class="mb-0">
-                                    <i class="fas fa-phone me-2"></i>
-                                    <a href="tel:+93731826346">+93 731 826 346</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
     </main>
@@ -2181,101 +2081,6 @@
             }
         }
 
-        // Contact Form Handling with Formspree
-        function setupContactForm() {
-            const contactForm = document.getElementById('contactForm');
-            if (!contactForm) return;
-
-            // Handle Formspree submission
-            contactForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                if (!this.checkValidity()) {
-                    e.stopPropagation();
-                    this.classList.add('was-validated');
-                    return;
-                }
-
-                const submitBtn = this.querySelector('button[type="submit"]');
-                const originalText = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
-                submitBtn.disabled = true;
-
-                try {
-                    const formData = new FormData(this);
-                    
-                    const response = await fetch(this.action, {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-
-                    const messageDiv = document.getElementById('formMessage');
-                    
-                    if (response.ok) {
-                        messageDiv.innerHTML = `
-                            <div class="alert alert-success">
-                                <i class="fas fa-check-circle me-2"></i>
-                                Thank you for your message! I've received it and will get back to you soon.
-                            </div>
-                        `;
-                        messageDiv.style.display = 'block';
-                        
-                        // Reset form
-                        contactForm.reset();
-                        contactForm.classList.remove('was-validated');
-                    } else {
-                        messageDiv.innerHTML = `
-                            <div class="alert alert-error">
-                                <i class="fas fa-exclamation-circle me-2"></i>
-                                Something went wrong. Please email me directly at asar23@gmail.com
-                            </div>
-                        `;
-                        messageDiv.style.display = 'block';
-                    }
-                } catch (error) {
-                    console.error('Form submission error:', error);
-                    const messageDiv = document.getElementById('formMessage');
-                    messageDiv.innerHTML = `
-                        <div class="alert alert-error">
-                            <i class="fas fa-exclamation-circle me-2"></i>
-                            Network error. Please try again or email me at asar23@gmail.com
-                        </div>
-                    `;
-                    messageDiv.style.display = 'block';
-                } finally {
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                    
-                    // Scroll to message
-                    const messageDiv = document.getElementById('formMessage');
-                    messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    
-                    // Hide message after 10 seconds
-                    setTimeout(() => {
-                        if (messageDiv.style.display !== 'none') {
-                            messageDiv.style.display = 'none';
-                        }
-                    }, 10000);
-                }
-            });
-
-            // Real-time validation
-            contactForm.querySelectorAll('.form-control').forEach(input => {
-                input.addEventListener('input', function() {
-                    if (this.checkValidity()) {
-                        this.classList.remove('is-invalid');
-                        this.classList.add('is-valid');
-                    } else {
-                        this.classList.remove('is-valid');
-                        this.classList.add('is-invalid');
-                    }
-                });
-            });
-        }
-
         // Load all functions when DOM is ready
         document.addEventListener('DOMContentLoaded', function() {
             try {
@@ -2285,7 +2090,6 @@
                 setupDetailsButtons();
                 setupImageFallbacks();
                 setupSkillAnimations();
-                setupContactForm();
                 
                 // Add loading state management
                 document.body.classList.remove('loading');
