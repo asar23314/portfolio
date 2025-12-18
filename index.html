@@ -1,31 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
     <title>Asar Khan | Senior IT Infrastructure & Cybersecurity Expert</title>
-    <meta name="description" content="Senior IT Infrastructure & Cybersecurity Expert with 13+ years of experience in network design, security implementation, and IT team leadership.">
-    <meta name="keywords" content="IT Infrastructure, Cybersecurity, Network Security, IT Manager, Senior IT Expert, Afghanistan IT Professional">
+    <meta name="description" content="Senior IT Infrastructure & Cybersecurity Expert with 13+ years of experience in network design, security implementation, and IT team leadership. Based in Kabul, Afghanistan.">
+    <meta name="keywords" content="IT Infrastructure, Cybersecurity, Network Security, IT Manager, Senior IT Expert, Afghanistan IT Professional, Network Design, Server Administration">
     <meta name="author" content="Asar Khan">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://asarkhan.com/">
     <meta property="og:title" content="Asar Khan | Senior IT Infrastructure & Cybersecurity Expert">
-    <meta property="og:description" content="13+ years of IT infrastructure and cybersecurity experience. Expert in network design, security implementation, and team leadership.">
+    <meta property="og:description" content="13+ years of IT infrastructure and cybersecurity experience. Expert in network design, security implementation, and team leadership in Afghanistan.">
     <meta property="og:image" content="https://raw.githubusercontent.com/asar23314/portfolio/main/unnamed%20(3).jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://asarkhan.com/">
     <meta name="twitter:title" content="Asar Khan | Senior IT Infrastructure & Cybersecurity Expert">
-    <meta name="twitter:description" content="13+ years of IT infrastructure and cybersecurity experience. Expert in network design, security implementation, and team leadership.">
+    <meta name="twitter:description" content="13+ years IT infrastructure & cybersecurity experience. Expert in network design, security implementation, and team leadership in Afghanistan.">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/asar23314/portfolio/main/unnamed%20(3).jpg">
+    
+    <!-- Additional SEO Meta -->
+    <meta name="robots" content="index, follow, max-snippet:150, max-image-preview:large">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://asarkhan.com/">
+    
+    <!-- Sitemap reference -->
+    <link rel="sitemap" type="application/xml" href="sitemap.xml">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#0a0e27">
     
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
@@ -46,7 +64,7 @@
             "https://linkedin.com/in/asarkhan-afg"
         ],
         "workLocation": "Kabul, Afghanistan",
-        "knowsAbout": ["IT Infrastructure", "Cybersecurity", "Network Security", "Server Administration", "Virtualization"]
+        "knowsAbout": ["IT Infrastructure", "Cybersecurity", "Network Security", "Server Administration", "Virtualization", "Firewall Management", "Network Design"]
     }
     </script>
     
@@ -75,15 +93,35 @@
             --secondary-color: #0099cc;
             --accent-color: #ff6b6b;
             --dark-color: #0a0e27;
+            --light-color: #f8f9fa;
             --card-bg: rgba(255, 255, 255, 0.05);
             --text-color: #b8c1ec;
             --heading-color: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 3rem;
+        }
+
+        [data-theme="light"] {
+            --primary-color: #0066cc;
+            --secondary-color: #004d99;
+            --accent-color: #e63946;
+            --dark-color: #f8f9fa;
+            --light-color: #0a0e27;
+            --card-bg: rgba(0, 0, 0, 0.03);
+            --text-color: #495057;
+            --heading-color: #212529;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --border-color: rgba(0, 0, 0, 0.1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
         
         body {
@@ -91,6 +129,52 @@
             background-color: var(--dark-color);
             color: var(--text-color);
             overflow-x: hidden;
+            transition: background-color 0.5s ease;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            border: none;
+            transition: all 0.3s ease;
+            min-width: 44px;
+            min-height: 44px;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px var(--shadow-color);
+        }
+
+        .theme-toggle i {
+            font-size: 1.2rem;
+        }
+
+        .theme-toggle .fa-sun {
+            display: none;
+        }
+
+        [data-theme="light"] .theme-toggle .fa-moon {
+            display: none;
+        }
+
+        [data-theme="light"] .theme-toggle .fa-sun {
+            display: block;
         }
 
         /* Image Styling with Fallback */
@@ -106,12 +190,18 @@
         ::-webkit-scrollbar {
             width: 10px;
         }
+        
         ::-webkit-scrollbar-track {
-            background: #1a1e3a;
+            background: var(--card-bg);
         }
+        
         ::-webkit-scrollbar-thumb {
             background: var(--primary-color);
             border-radius: 5px;
+        }
+
+        [data-theme="light"] ::-webkit-scrollbar-track {
+            background: #e9ecef;
         }
 
         /* NAVBAR */
@@ -122,11 +212,19 @@
             background-color: rgba(10, 14, 39, 0.9) !important;
         }
 
+        [data-theme="light"] .navbar {
+            background-color: rgba(248, 249, 250, 0.9) !important;
+        }
+
         .navbar.scrolled {
             background-color: rgba(10, 14, 39, 0.95) !important;
             backdrop-filter: blur(10px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 20px var(--shadow-color);
             padding: 0.5rem 0;
+        }
+
+        [data-theme="light"] .navbar.scrolled {
+            background-color: rgba(248, 249, 250, 0.95) !important;
         }
         
         .navbar-brand {
@@ -141,6 +239,9 @@
             margin: 0 0.75rem;
             position: relative;
             transition: color 0.3s ease;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
         }
         
         .nav-link::after {
@@ -158,6 +259,7 @@
         .nav-link.active {
             color: var(--primary-color) !important;
         }
+        
         .nav-link:hover::after {
             width: 80%;
             left: 10%;
@@ -181,6 +283,10 @@
             height: 100%;
             background: radial-gradient(ellipse at top, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
             z-index: -1;
+        }
+
+        [data-theme="light"] .hero-bg-effect {
+            background: radial-gradient(ellipse at top, rgba(0, 102, 204, 0.05) 0%, transparent 50%);
         }
         
         .hero-title {
@@ -212,12 +318,17 @@
             padding: 1.5rem;
             text-align: center;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border-color);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+        
         .stats-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        [data-theme="light"] .stats-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.15);
         }
         
         .stats-number {
@@ -241,8 +352,13 @@
             font-weight: 600;
             text-decoration: none;
             transition: all 0.4s ease;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             border: 2px solid transparent;
+            min-height: 44px;
+            min-width: 44px;
+            cursor: pointer;
         }
         
         .btn-primary-custom {
@@ -250,11 +366,19 @@
             color: white;
             box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
         }
+
+        [data-theme="light"] .btn-primary-custom {
+            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.2);
+        }
         
         .btn-primary-custom:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
             color: white;
+        }
+
+        [data-theme="light"] .btn-primary-custom:hover {
+            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.3);
         }
         
         .btn-outline-light-custom {
@@ -282,6 +406,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            min-width: 44px;
         }
         
         .btn-details:hover, .btn-details:focus {
@@ -297,10 +422,11 @@
             border-radius: 20px;
             overflow: hidden;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 15px 35px var(--shadow-color);
             transition: transform 0.3s ease;
         }
+        
         .profile-card:hover {
             transform: scale(1.02);
         }
@@ -337,6 +463,7 @@
             position: relative;
             display: inline-block;
         }
+        
         .section-title::after {
             content: '';
             position: absolute;
@@ -365,7 +492,7 @@
             padding: 2rem;
             margin-bottom: 1.5rem;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border-color);
             transition: all 0.3s ease;
             height: 100%;
         }
@@ -374,6 +501,11 @@
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 212, 255, 0.15);
             border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        [data-theme="light"] .experience-card:hover {
+            box-shadow: 0 15px 30px rgba(0, 102, 204, 0.1);
+            border-color: rgba(0, 102, 204, 0.2);
         }
         
         .experience-card h3 {
@@ -415,6 +547,10 @@
             margin-top: 1rem;
         }
 
+        [data-theme="light"] .experience-details {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
         .experience-details.show {
             max-height: 5000px;
             padding: 1.5rem;
@@ -433,6 +569,10 @@
             border-radius: 10px;
             padding: 1.5rem;
             border-left: 3px solid var(--primary-color);
+        }
+
+        [data-theme="light"] .detail-item {
+            background: rgba(0, 102, 204, 0.05);
         }
 
         .detail-item h5 {
@@ -477,6 +617,10 @@
             overflow: hidden;
             position: relative;
         }
+
+        [data-theme="light"] .skill-bar {
+            background: rgba(0, 0, 0, 0.1);
+        }
         
         .skill-level {
             height: 100%;
@@ -500,10 +644,11 @@
             padding: 2rem;
             margin-bottom: 1rem;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border-color);
             text-align: center;
             transition: all 0.3s ease;
         }
+        
         .contact-item:hover {
             transform: translateY(-5px);
             border-color: var(--primary-color);
@@ -521,13 +666,57 @@
             margin: 0 auto 1rem;
             font-size: 1.5rem;
         }
-        
+
+        /* Contact Form */
+        .contact-form {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+        }
+
+        .form-control {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 12px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            background: var(--card-bg);
+            border-color: var(--primary-color);
+            color: var(--text-color);
+            box-shadow: 0 0 0 0.25rem rgba(0, 212, 255, 0.25);
+        }
+
+        [data-theme="light"] .form-control:focus {
+            box-shadow: 0 0 0 0.25rem rgba(0, 102, 204, 0.25);
+        }
+
+        .form-control::placeholder {
+            color: var(--text-color);
+            opacity: 0.7;
+        }
+
+        .form-label {
+            color: var(--heading-color);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
         /* FOOTER */
         footer {
             background: #060818;
             color: var(--text-color);
             padding: 60px 0 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid var(--border-color);
+        }
+
+        [data-theme="light"] footer {
+            background: #e9ecef;
         }
         
         footer h5 {
@@ -552,7 +741,7 @@
             width: 45px;
             height: 45px;
             background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border-color);
             color: var(--text-color);
             border-radius: 50%;
             margin-right: 10px;
@@ -571,41 +760,76 @@
             .hero-title {
                 font-size: 2.5rem;
             }
+            
             .hero-subtitle {
                 font-size: 1.3rem;
             }
+            
             .section-title {
                 font-size: 2.2rem;
             }
+            
             .details-content {
                 grid-template-columns: 1fr;
                 gap: 1rem;
             }
+            
             .experience-card {
                 padding: 1.5rem;
             }
+            
             .profile-img {
                 height: 300px;
             }
+            
             .btn-custom {
                 padding: 12px 25px;
                 font-size: 0.9rem;
             }
+            
             .nav-link {
                 padding: 10px 15px;
                 margin: 0;
+                border-bottom: 1px solid var(--border-color);
             }
+            
+            .navbar-collapse {
+                background: var(--dark-color);
+                border-top: 1px solid var(--border-color);
+                padding: 1rem;
+                margin-top: 1rem;
+            }
+
+            [data-theme="light"] .navbar-collapse {
+                background: var(--dark-color);
+            }
+            
             .btn-details {
                 padding: 14px 20px;
                 width: 100%;
                 margin-top: 1rem;
             }
+            
             .experience-details.show {
                 padding: 1rem;
                 overflow-x: hidden;
+                max-height: none;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
             }
+            
             .contact-item {
                 padding: 1.5rem;
+            }
+
+            .theme-toggle {
+                bottom: 70px;
+                right: 20px;
+            }
+
+            body {
+                font-size: 16px;
+                line-height: 1.6;
             }
         }
 
@@ -613,17 +837,33 @@
             .hero-section {
                 padding: 120px 0 80px;
             }
+            
             .section {
                 padding: 80px 0;
             }
+            
             .stats-card {
                 padding: 1rem;
             }
+            
             .stats-number {
                 font-size: 2rem;
             }
+            
             .profile-card {
                 margin-top: 2rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
             }
         }
 
@@ -662,7 +902,7 @@
 
         /* Better text contrast */
         .text-muted {
-            color: #b8c1ec !important;
+            color: var(--text-color) !important;
             opacity: 0.8;
         }
 
@@ -670,6 +910,26 @@
         .loading {
             opacity: 0.5;
             pointer-events: none;
+        }
+
+        /* Success/Error Messages */
+        .alert {
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid transparent;
+        }
+
+        .alert-success {
+            background-color: rgba(40, 167, 69, 0.1);
+            border-color: rgba(40, 167, 69, 0.2);
+            color: #28a745;
+        }
+
+        .alert-error {
+            background-color: rgba(220, 53, 69, 0.1);
+            border-color: rgba(220, 53, 69, 0.2);
+            color: #dc3545;
         }
 
         /* Print Styles */
@@ -709,7 +969,7 @@
                 border: 1px solid #ddd !important;
             }
             
-            .btn-custom, .btn-details {
+            .btn-custom, .btn-details, .theme-toggle {
                 display: none !important;
             }
             
@@ -783,6 +1043,12 @@
     </style>
 </head>
 <body class="loading">
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top" aria-label="Main Navigation">
         <div class="container">
@@ -805,7 +1071,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section" aria-labelledby="hero-title">
+    <header id="home" class="hero-section" role="banner" aria-labelledby="hero-title">
         <div class="hero-bg-effect" aria-hidden="true"></div>
         <div class="container">
             <div class="row align-items-center">
@@ -846,10 +1112,11 @@
                 <div class="col-lg-5 mt-5 mt-lg-0" data-aos="fade-left">
                     <div class="profile-card">
                         <img src="https://raw.githubusercontent.com/asar23314/portfolio/main/unnamed%20(3).jpg" 
-                             alt="Asar Khan - Senior IT Infrastructure and Cybersecurity Expert with 13+ years of experience" 
+                             alt="Asar Khan, Senior IT Infrastructure and Cybersecurity Expert with 13+ years experience in Kabul, Afghanistan"
                              class="profile-img"
                              loading="lazy"
-                             onerror="this.onerror=null; this.src='https://via.placeholder.com/400x400/0a0e27/00d4ff?text=AK';">
+                             width="400" height="400"
+                             onerror="this.onerror=null; this.src='https://via.placeholder.com/400x400/0a0e27/00d4ff?text=AK+Profile+Photo';">
                         <div class="profile-content">
                             <h3 class="h5 mb-2">Asar Khan</h3>
                             <p class="mb-3"><i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i>Kabul, Afghanistan</p>
@@ -864,650 +1131,701 @@
                 </div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- About Section -->
-    <section id="about" class="section" aria-labelledby="about-title">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title" id="about-title" data-aos="fade-up">Professional Profile</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                    Senior IT Infrastructure & Cybersecurity Expert with extensive experience in optimizing technology environments and leading digital transformation initiatives.
-                </p>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-6 mb-4" data-aos="fade-right">
-                    <div class="experience-card">
-                        <h3 class="h4 mb-3">About Me</h3>
-                        <p class="mb-3">
-                            I am a seasoned IT professional with over 13 years of hands-on experience in designing, implementing, and managing robust IT infrastructure and cybersecurity solutions. Skilled in network infrastructure, server management, and cybersecurity across Windows and Linux environments.
-                        </p>
-                        <h5 class="h6 mb-2">Core Competencies:</h5>
-                        <ul class="list-unstyled" role="list">
-                            <li class="mb-2" role="listitem"><i class="fas fa-check-circle me-2" aria-hidden="true"></i>IT Infrastructure Design & Management</li>
-                            <li class="mb-2" role="listitem"><i class="fas fa-check-circle me-2" aria-hidden="true"></i>Cybersecurity Implementation</li>
-                            <li class="mb-2" role="listitem"><i class="fas fa-check-circle me-2" aria-hidden="true"></i>Network Architecture & Security</li>
-                            <li class="mb-2" role="listitem"><i class="fas fa-check-circle me-2" aria-hidden="true"></i>Server Virtualization (Proxmox, Hyper-V)</li>
-                        </ul>
-                    </div>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- About Section -->
+        <section id="about" class="section" aria-labelledby="about-title">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title" id="about-title" data-aos="fade-up">Professional Profile</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        Senior IT Infrastructure & Cybersecurity Expert with extensive experience in optimizing technology environments and leading digital transformation initiatives.
+                    </p>
                 </div>
                 
-                <div class="col-lg-6 mb-4" data-aos="fade-left">
-                    <div class="experience-card">
-                        <h3 class="h4 mb-3">Career Objectives</h3>
-                        <p class="mb-3">
-                            My career aspiration is to continue advancing in the field of IT infrastructure and cybersecurity. I aim to leverage my 13+ years of experience to take on more challenging projects and leadership roles, where I can drive innovation and implement cutting-edge solutions.
-                        </p>
-                        
-                        <div class="mb-3">
-                            <h5 class="h6 mb-2"><i class="fas fa-shield-alt me-2 text-primary" aria-hidden="true"></i>Comprehensive Security Strategies</h5>
-                            <p class="small">Develop and implement comprehensive security strategies to protect organizational assets</p>
+                <div class="row">
+                    <div class="col-lg-6 mb-4" data-aos="fade-right">
+                        <div class="experience-card">
+                            <h3 class="h4 mb-3">About Me</h3>
+                            <p class="mb-3">
+                                I am a seasoned IT professional with over 13 years of hands-on experience in designing, implementing, and managing robust IT infrastructure and cybersecurity solutions. Skilled in network infrastructure, server management, and cybersecurity across Windows and Linux environments.
+                            </p>
+                            <h5 class="h6 mb-2">Core Competencies:</h5>
+                            <ul class="list-unstyled" role="list">
+                                <li class="mb-2" role="listitem"><i class="fas fa-check-circle me-2" aria-hidden="true"></i>IT Infrastructure Design & Management</li>
+                                <li class="mb-2" role="listitem"><i class="fas fa-check-circle me-2" aria-hidden="true"></i>Cybersecurity Implementation</li>
+                                <li class="mb-2" role="listitem"><i class="fas fa-check-circle me-2" aria-hidden="true"></i>Network Architecture & Security</li>
+                                <li class="mb-2" role="listitem"><i class="fas fa-check-circle me-2" aria-hidden="true"></i>Server Virtualization (Proxmox, Hyper-V)</li>
+                            </ul>
                         </div>
-                        
-                        <div class="mb-3">
-                            <h5 class="h6 mb-2"><i class="fas fa-server me-2 text-primary" aria-hidden="true"></i>Network Performance Optimization</h5>
-                            <p class="small">Optimize network performance and implement scalable infrastructure solutions</p>
+                    </div>
+                    
+                    <div class="col-lg-6 mb-4" data-aos="fade-left">
+                        <div class="experience-card">
+                            <h3 class="h4 mb-3">Career Objectives</h3>
+                            <p class="mb-3">
+                                My career aspiration is to continue advancing in the field of IT infrastructure and cybersecurity. I aim to leverage my 13+ years of experience to take on more challenging projects and leadership roles, where I can drive innovation and implement cutting-edge solutions.
+                            </p>
+                            
+                            <div class="mb-3">
+                                <h5 class="h6 mb-2"><i class="fas fa-shield-alt me-2 text-primary" aria-hidden="true"></i>Comprehensive Security Strategies</h5>
+                                <p class="small">Develop and implement comprehensive security strategies to protect organizational assets</p>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <h5 class="h6 mb-2"><i class="fas fa-server me-2 text-primary" aria-hidden="true"></i>Network Performance Optimization</h5>
+                                <p class="small">Optimize network performance and implement scalable infrastructure solutions</p>
+                            </div>
+                            
+                            <div>
+                                <h5 class="h6 mb-2"><i class="fas fa-users me-2 text-primary" aria-hidden="true"></i>Organizational Success</h5>
+                                <p class="small">Contribute to the overall success of organizations through strategic technology implementation</p>
+                            </div>
                         </div>
-                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Experience Section -->
+        <article id="experience" class="section" style="background-color: #0a0e27;" 
+                aria-labelledby="experience-title" itemscope itemtype="http://schema.org/Person">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title" id="experience-title" data-aos="fade-up">Professional Experience</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        13+ years of comprehensive IT experience across various industries and roles.
+                    </p>
+                </div>
+                
+                <!-- Current Role - Moraa Educational Complex -->
+                <article class="experience-card mb-4" data-aos="fade-up" itemprop="hasOccupation" itemscope itemtype="http://schema.org/Occupation">
+                    <div class="d-flex justify-content-between align-items-start mb-3 flex-wrap">
                         <div>
-                            <h5 class="h6 mb-2"><i class="fas fa-users me-2 text-primary" aria-hidden="true"></i>Organizational Success</h5>
-                            <p class="small">Contribute to the overall success of organizations through strategic technology implementation</p>
+                            <span class="experience-period">April 2, 2025 – Present</span>
+                            <h3 class="h4 mb-2" itemprop="name">IT Manager</h3>
+                            <h4 class="h5 mb-3" itemprop="worksFor">Moraa Educational Complex</h4>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Enhanced Experience Section - ALL ROLES INCLUDED -->
-    <section id="experience" class="section" style="background-color: #0a0e27;" aria-labelledby="experience-title">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title" id="experience-title" data-aos="fade-up">Professional Experience</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                    13+ years of comprehensive IT experience across various industries and roles.
-                </p>
-            </div>
-            
-            <!-- Current Role - Moraa Educational Complex -->
-            <article class="experience-card mb-4" data-aos="fade-up" itemscope itemtype="https://schema.org/Person">
-                <div class="d-flex justify-content-between align-items-start mb-3 flex-wrap">
-                    <div>
-                        <span class="experience-period">April 2, 2025 – Present</span>
-                        <h3 class="h4 mb-2" itemprop="jobTitle">IT Manager</h3>
-                        <h4 class="h5 mb-3" itemprop="worksFor">Moraa Educational Complex</h4>
-                    </div>
-                    <span class="badge bg-success">Current Position</span>
-                </div>
-                
-                <p class="lead mb-3" itemprop="description">
-                    Oversee the planning, implementation, and management of all IT infrastructure, support systems, and technology-driven initiatives to ensure secure, efficient, and innovative IT operations across the institution.
-                </p>
-                
-                <h5 class="h6 mb-3">Key Responsibilities:</h5>
-                <ul class="list-unstyled" role="list">
-                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Manage and maintain institutional IT infrastructure including networks, servers, virtualization platforms</li>
-                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Deploy and administer Proxmox for server virtualization and manage Windows Server environments</li>
-                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Implement and manage pfSense Firewall with pfBlockerNG for enhanced network security</li>
-                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Configure AdGuard Home for DNS-level content filtering and security</li>
-                </ul>
-                
-                <button class="btn-details view-details-btn" data-target="moraa-details" 
-                        aria-expanded="false" aria-controls="moraa-details">
-                    <i class="fas fa-chevron-down me-2" aria-hidden="true"></i>
-                    <span class="btn-text">View Details</span>
-                </button>
-                
-                <div id="moraa-details" class="experience-details" role="region" aria-live="polite">
-                    <div class="details-content">
-                        <div class="detail-item">
-                            <h5>Infrastructure Management</h5>
-                            <ul>
-                                <li>Manage and maintain institutional IT infrastructure including networks, servers, virtualization platforms, and endpoint devices</li>
-                                <li>Deploy and administer Proxmox for server virtualization and manage Windows Server environments with Active Directory (AD), DHCP, and DNS</li>
-                                <li>Configured Synology NAS for secure file storage, backup, and collaboration</li>
-                                <li>Configured and maintained Print Server for centralized printer management</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="detail-item">
-                            <h5>Security Implementation</h5>
-                            <ul>
-                                <li>Implement and manage pfSense Firewall with pfBlockerNG to enhance network security and block unwanted traffic and threats</li>
-                                <li>Configure AdGuard Home for DNS-level content filtering to block ads, tracking, and malicious domains</li>
-                                <li>Monitor network performance and traffic using ntopng for real-time diagnostics</li>
-                                <li>Utilize Zabbix OS for infrastructure monitoring and alerting</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="detail-item">
-                            <h5>System Administration</h5>
-                            <ul>
-                                <li>Create and manage shared folders for scanning documents from network scanners, enabling automated document storage and collaboration</li>
-                                <li>Configure Windows machines for QuickBooks to support accounting and finance operations</li>
-                                <li>Implement Veeam Backup Solution to ensure comprehensive data protection and disaster recovery</li>
-                                <li>Plan and enforce IT policies including user access, system security, and data protection</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            
-            <!-- Setaragan Mutahed -->
-            <article class="experience-card mb-4" data-aos="fade-up" data-aos-delay="100" itemscope itemtype="https://schema.org/Person">
-                <div class="d-flex justify-content-between align-items-start mb-3 flex-wrap">
-                    <div>
-                        <span class="experience-period">November 2023 – April 2025</span>
-                        <h3 class="h4 mb-2" itemprop="jobTitle">Technical Supervisor</h3>
-                        <h4 class="h5 mb-3" itemprop="worksFor">Setaragan Mutahed</h4>
-                    </div>
-                </div>
-                
-                <p class="lead mb-3" itemprop="description">
-                    Oversaw all technical aspects of the Electronic Money Institution project to ensure it was delivered on time, on budget and met technical requirements.
-                </p>
-                
-                <h5 class="h6 mb-3">Key Responsibilities:</h5>
-                <ul class="list-unstyled" role="list">
-                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Oversaw work of technical/IT staff and ensured projects were completed accurately and on schedule</li>
-                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Managed technical projects from planning and budgeting to implementation</li>
-                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Installed and configured pfSense firewall and AdGuard Home for network security</li>
-                </ul>
-                
-                <button class="btn-details view-details-btn" data-target="setaragan-details"
-                        aria-expanded="false" aria-controls="setaragan-details">
-                    <i class="fas fa-chevron-down me-2" aria-hidden="true"></i>
-                    <span class="btn-text">View Details</span>
-                </button>
-                
-                <div id="setaragan-details" class="experience-details" role="region" aria-live="polite">
-                    <div class="details-content">
-                        <div class="detail-item">
-                            <h5>Network Security & Infrastructure</h5>
-                            <ul>
-                                <li>Installed and configured pfSense firewall for enhanced network security, creating WAN and LAN configurations</li>
-                                <li>Implemented security measures by creating aliases and allowing specific ports, enhancing network security</li>
-                                <li>Installed and configured AdGuard Home for content filtering, blocking ads, malicious sites, tracking sites, and malware</li>
-                                <li>Conducted regular monitoring and maintenance of the pfSense firewall, ensuring optimal performance</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="detail-item">
-                            <h5>Project & Team Management</h5>
-                            <ul>
-                                <li>Oversaw the work of technical/IT staff and ensured projects and tasks were completed accurately and on schedule</li>
-                                <li>Managed technical projects from planning and budgeting to implementation</li>
-                                <li>Trained and developed technical staff by identifying training needs and conducting knowledge transfer sessions</li>
-                                <li>Prepared technical documentation such as architecture diagrams, procedures, and knowledge bases</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="detail-item">
-                            <h5>System Deployment</h5>
-                            <ul>
-                                <li>Deployed QuickBooks for managing accounting processes</li>
-                                <li>Implemented and managed TSpIus for remote desktop and application delivery services</li>
-                                <li>Set up and maintained OpenVPN for secure remote access</li>
-                                <li>Deployed and managed ntopng for network traffic analysis and monitoring</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Brightway Consultancy -->
-            <article class="experience-card mb-4" data-aos="fade-up" data-aos-delay="200" itemscope itemtype="https://schema.org/Person">
-                <div class="d-flex justify-content-between align-items-start mb-3 flex-wrap">
-                    <div>
-                        <span class="experience-period">February 2023 – October 2023</span>
-                        <h3 class="h4 mb-2" itemprop="jobTitle">IT Officer</h3>
-                        <h4 class="h5 mb-3" itemprop="worksFor">Brightway Consultancy</h4>
-                    </div>
-                </div>
-                
-                <p class="lead mb-3" itemprop="description">
-                    Managed and oversaw the company's network infrastructure, operations, and security and user support functions. Ensured smooth network performance, compliance with security standards, and around-the-clock technical support.
-                </p>
-                
-                <h5 class="h6 mb-3">Key Responsibilities:</h5>
-                <ul class="list-unstyled" role="list">
-                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Managed LAN/WAN networks and network security systems</li>
-                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Established network specifications and configurations</li>
-                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Conducted training programs and provided user support</li>
-                    <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Provided 24/7 critical support and technical assistance</li>
-                </ul>
-                
-                <button class="btn-details view-details-btn" data-target="brightway-details"
-                        aria-expanded="false" aria-controls="brightway-details">
-                    <i class="fas fa-chevron-down me-2" aria-hidden="true"></i>
-                    <span class="btn-text">View Details</span>
-                </button>
-                
-                <div id="brightway-details" class="experience-details" role="region" aria-live="polite">
-                    <div class="details-content">
-                        <div class="detail-item">
-                            <h5>Network Management & Security</h5>
-                            <ul>
-                                <li>Managing LAN/WAN networks and network security systems</li>
-                                <li>Establishing network specifications and configurations</li>
-                                <li>Securing network access, monitoring, and evaluation</li>
-                                <li>Upgrading network infrastructure and implementing enhancements</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="detail-item">
-                            <h5>User Support & Training</h5>
-                            <ul>
-                                <li>Conducting training programs and providing user support</li>
-                                <li>Providing 24/7 critical support and technical assistance</li>
-                                <li>Surveying and monitoring network operations</li>
-                                <li>Maintaining inventory and documentation of equipment</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- DAWIOIL LTD -->
-            <article class="experience-card mb-4" data-aos="fade-up" data-aos-delay="300" itemscope itemtype="https://schema.org/Person">
-                <div class="d-flex justify-content-between align-items-start mb-3 flex-wrap">
-                    <div>
-                        <span class="experience-period">September 2022 – January 2023</span>
-                        <h3 class="h4 mb-2" itemprop="jobTitle">IT Consultant</h3>
-                        <h4 class="h5 mb-3" itemprop="worksFor">DAWIOIL LTD</h4>
-                    </div>
-                </div>
-                
-                <p class="lead mb-3" itemprop="description">
-                    Evaluated clients' existing IT infrastructure and provided expert guidance, solutions and support to optimize systems, enhance security, ensure compliance and empower users through strategic technology management, integration and training.
-                </p>
-                
-                <button class="btn-details view-details-btn" data-target="dawioil-details"
-                        aria-expanded="false" aria-controls="dawioil-details">
-                    <i class="fas fa-chevron-down me-2" aria-hidden="true"></i>
-                    <span class="btn-text">View Details</span>
-                </button>
-                
-                <div id="dawioil-details" class="experience-details" role="region" aria-live="polite">
-                    <div class="details-content">
-                        <div class="detail-item">
-                            <h5>Infrastructure Optimization</h5>
-                            <ul>
-                                <li>Analyzed existing IT infrastructure for optimization opportunities</li>
-                                <li>Evaluated and optimized Windows infrastructure, focusing on Windows Servers, Active Directory, DNS, and DHCP</li>
-                                <li>Developed and implemented IT policies to ensure data security and reliability</li>
-                                <li>Configured firewalls and security tools to enhance system protection</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="detail-item">
-                            <h5>Training & Support</h5>
-                            <ul>
-                                <li>Provided training and support for new software and technology tools to empower staff</li>
-                                <li>Empowered staff to effectively manage Windows-based systems</li>
-                                <li>Ensured adherence to industry standards by monitoring and promptly resolving IT issues</li>
-                                <li>Minimized system downtime through proactive management</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="detail-item">
-                            <h5>Consultation & Collaboration</h5>
-                            <ul>
-                                <li>Collaborated with department heads to define technical requirements</li>
-                                <li>Aligned technology solutions with organizational objectives</li>
-                                <li>Kept up to date with emerging technologies and industry trends</li>
-                                <li>Maintained a forward-thinking approach to Windows Infrastructure management</li>
-                                <li>Advised on Veeam Backup implementation to strengthen data protection and disaster recovery processes</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Straun Pharma -->
-            <article class="experience-card mb-4" data-aos="fade-up" data-aos-delay="400" itemscope itemtype="https://schema.org/Person">
-                <div class="d-flex justify-content-between align-items-start mb-3 flex-wrap">
-                    <div>
-                        <span class="experience-period">March 2022 – August 2022</span>
-                        <h3 class="h4 mb-2" itemprop="jobTitle">IT Officer</h3>
-                        <h4 class="h5 mb-3" itemprop="worksFor">Straun Pharma</h4>
-                    </div>
-                </div>
-                
-                <p class="lead mb-3" itemprop="description">
-                    Developed and managed the company's IT training programs to assess skill gaps, design job-specific materials, implement assessments, and ensure employees' continuous development and compliance with IT training standards.
-                </p>
-                
-                <button class="btn-details view-details-btn" data-target="straun-details"
-                        aria-expanded="false" aria-controls="straun-details">
-                    <i class="fas fa-chevron-down me-2" aria-hidden="true"></i>
-                    <span class="btn-text">View Details</span>
-                </button>
-                
-                <div id="straun-details" class="experience-details" role="region" aria-live="polite">
-                    <div class="details-content">
-                        <div class="detail-item">
-                            <h5>Training & Development</h5>
-                            <ul>
-                                <li>Developed and executed comprehensive IT training programs aligned with company goals</li>
-                                <li>Conducted needs assessments to identify employees' IT skill gaps</li>
-                                <li>Collaborated with department heads to design job-specific IT training materials</li>
-                                <li>Managed the IT performance assessment system, including evaluations and feedback</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="detail-item">
-                            <h5>Program Management</h5>
-                            <ul>
-                                <li>Implemented strategies for IT staff engagement and career growth</li>
-                                <li>Ensured compliance with legal and regulatory IT training requirements</li>
-                                <li>Evaluated IT training data to enhance program effectiveness</li>
-                                <li>Cultivated relationships with IT training providers and associations</li>
-                                <li>Mentored IT personnel for their professional development</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Previous Roles Summary -->
-            <article class="experience-card" data-aos="fade-up" data-aos-delay="500" itemscope itemtype="https://schema.org/Person">
-                <h3 class="h4 mb-4 text-center">Additional Professional Experience (2012-2021)</h3>
-                
-                <div class="details-content">
-                    <div class="detail-item">
-                        <h5>Mashal University</h5>
-                        <p class="mb-2"><strong>CS Lecturer and Head of IT Department</strong> (Oct 2019 – Feb 2021)</p>
-                        <ul>
-                            <li>Provided strategic leadership and management of the IT Department</li>
-                            <li>Set and executed departmental academic strategy in alignment with university goals</li>
-                            <li>Enhanced student experience by overseeing admission, instruction, and examination</li>
-                            <li>Developed new programs to attract students and markets</li>
-                            <li>Uphled research integrity and fostered a progressive research environment</li>
-                            <li>Implemented HR policies and managed staff performance</li>
-                        </ul>
+                        <span class="badge bg-success">Current Position</span>
                     </div>
                     
-                    <div class="detail-item">
-                        <h5>Zippy Link</h5>
-                        <p class="mb-2"><strong>IT Manager</strong> (Aug 2019 – Sep 2019)</p>
-                        <ul>
-                            <li>Oversaw core systems operations, infrastructure management and technical support functions</li>
-                            <li>Administered core operating systems, networking, security, and file systems</li>
-                            <li>Ensured impeccable uptime through proactive monitoring and disaster recovery</li>
-                            <li>Managed high-frequency monitoring and enhanced system performance</li>
-                            <li>Deployed servers using scripts, managed instances, and troubleshooter</li>
-                        </ul>
+                    <p class="lead mb-3" itemprop="description">
+                        Oversee the planning, implementation, and management of all IT infrastructure, support systems, and technology-driven initiatives to ensure secure, efficient, and innovative IT operations across the institution.
+                    </p>
+                    
+                    <h5 class="h6 mb-3">Key Responsibilities:</h5>
+                    <ul class="list-unstyled" role="list">
+                        <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Manage and maintain institutional IT infrastructure including networks, servers, virtualization platforms</li>
+                        <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Deploy and administer Proxmox for server virtualization and manage Windows Server environments</li>
+                        <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Implement and manage pfSense Firewall with pfBlockerNG for enhanced network security</li>
+                        <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Configure AdGuard Home for DNS-level content filtering and security</li>
+                    </ul>
+                    
+                    <button class="btn-details view-details-btn" data-target="moraa-details" 
+                            aria-expanded="false" aria-controls="moraa-details">
+                        <i class="fas fa-chevron-down me-2" aria-hidden="true"></i>
+                        <span class="btn-text">View Details</span>
+                    </button>
+                    
+                    <div id="moraa-details" class="experience-details" role="region" aria-live="polite">
+                        <div class="details-content">
+                            <div class="detail-item">
+                                <h5>Infrastructure Management</h5>
+                                <ul>
+                                    <li>Manage and maintain institutional IT infrastructure including networks, servers, virtualization platforms, and endpoint devices</li>
+                                    <li>Deploy and administer Proxmox for server virtualization and manage Windows Server environments with Active Directory (AD), DHCP, and DNS</li>
+                                    <li>Configured Synology NAS for secure file storage, backup, and collaboration</li>
+                                    <li>Configured and maintained Print Server for centralized printer management</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <h5>Security Implementation</h5>
+                                <ul>
+                                    <li>Implement and manage pfSense Firewall with pfBlockerNG to enhance network security and block unwanted traffic and threats</li>
+                                    <li>Configure AdGuard Home for DNS-level content filtering to block ads, tracking, and malicious domains</li>
+                                    <li>Monitor network performance and traffic using ntopng for real-time diagnostics</li>
+                                    <li>Utilize Zabbix OS for infrastructure monitoring and alerting</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <h5>System Administration</h5>
+                                <ul>
+                                    <li>Create and manage shared folders for scanning documents from network scanners, enabling automated document storage and collaboration</li>
+                                    <li>Configure Windows machines for QuickBooks to support accounting and finance operations</li>
+                                    <li>Implement Veeam Backup Solution to ensure comprehensive data protection and disaster recovery</li>
+                                    <li>Plan and enforce IT policies including user access, system security, and data protection</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Setaragan Mutahed -->
+                <article class="experience-card mb-4" data-aos="fade-up" data-aos-delay="100" itemprop="hasOccupation" itemscope itemtype="http://schema.org/Occupation">
+                    <div class="d-flex justify-content-between align-items-start mb-3 flex-wrap">
+                        <div>
+                            <span class="experience-period">November 2023 – April 2025</span>
+                            <h3 class="h4 mb-2" itemprop="name">Technical Supervisor</h3>
+                            <h4 class="h5 mb-3" itemprop="worksFor">Setaragan Mutahed</h4>
+                        </div>
                     </div>
                     
-                    <div class="detail-item">
-                        <h5>Muslim English Language Institute</h5>
-                        <p class="mb-2"><strong>IT Manager</strong> (April 2016 – August 2019)</p>
-                        <ul>
-                            <li>Managed all aspects of IT operations, infrastructure, security and user support</li>
-                            <li>Configured Windows Server 2012 R2, Active Directory, DHCP, DNS, and Windows Server Backup</li>
-                            <li>Implemented and managed Sophos Firewall for network protection</li>
-                            <li>Configured MikroTik routers at branch locations with web filtering and bandwidth control</li>
-                            <li>Collaborated with a development company to create a Management Information System (MIS)</li>
-                            <li>Managed migration of MIS from testing to production environment</li>
-                        </ul>
-                    </div>
+                    <p class="lead mb-3" itemprop="description">
+                        Oversaw all technical aspects of the Electronic Money Institution project to ensure it was delivered on time, on budget and met technical requirements.
+                    </p>
                     
-                    <div class="detail-item">
-                        <h5>DAWIOIL</h5>
-                        <p class="mb-2"><strong>ICT & ERP Manager</strong> (June 2012 – April 2016)</p>
-                        <ul>
-                            <li>Provided strategic technical leadership and managed all aspects of IT operations</li>
-                            <li>Managed various project phases, including requirements analysis and system testing</li>
-                            <li>Prepared detailed business process execution documents</li>
-                            <li>Installed and configured hardware, operating systems, and applications</li>
-                            <li>Monitored and maintained computer systems and networks, ensuring system availability</li>
-                            <li>Managed user accounts and addressed password-related issues</li>
-                        </ul>
+                    <h5 class="h6 mb-3">Key Responsibilities:</h5>
+                    <ul class="list-unstyled" role="list">
+                        <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Oversaw work of technical/IT staff and ensured projects were completed accurately and on schedule</li>
+                        <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Managed technical projects from planning and budgeting to implementation</li>
+                        <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Installed and configured pfSense firewall and AdGuard Home for network security</li>
+                    </ul>
+                    
+                    <button class="btn-details view-details-btn" data-target="setaragan-details"
+                            aria-expanded="false" aria-controls="setaragan-details">
+                        <i class="fas fa-chevron-down me-2" aria-hidden="true"></i>
+                        <span class="btn-text">View Details</span>
+                    </button>
+                    
+                    <div id="setaragan-details" class="experience-details" role="region" aria-live="polite">
+                        <div class="details-content">
+                            <div class="detail-item">
+                                <h5>Network Security & Infrastructure</h5>
+                                <ul>
+                                    <li>Installed and configured pfSense firewall for enhanced network security, creating WAN and LAN configurations</li>
+                                    <li>Implemented security measures by creating aliases and allowing specific ports, enhancing network security</li>
+                                    <li>Installed and configured AdGuard Home for content filtering, blocking ads, malicious sites, tracking sites, and malware</li>
+                                    <li>Conducted regular monitoring and maintenance of the pfSense firewall, ensuring optimal performance</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <h5>Project & Team Management</h5>
+                                <ul>
+                                    <li>Oversaw the work of technical/IT staff and ensured projects and tasks were completed accurately and on schedule</li>
+                                    <li>Managed technical projects from planning and budgeting to implementation</li>
+                                    <li>Trained and developed technical staff by identifying training needs and conducting knowledge transfer sessions</li>
+                                    <li>Prepared technical documentation such as architecture diagrams, procedures, and knowledge bases</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <h5>System Deployment</h5>
+                                <ul>
+                                    <li>Deployed QuickBooks for managing accounting processes</li>
+                                    <li>Implemented and managed TSpIus for remote desktop and application delivery services</li>
+                                    <li>Set up and maintained OpenVPN for secure remote access</li>
+                                    <li>Deployed and managed ntopng for network traffic analysis and monitoring</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </article>
-        </div>
-    </section>
+                </article>
 
-    <!-- Skills Section - Now with Intersection Observer -->
-    <section id="skills" class="section" aria-labelledby="skills-title">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title" id="skills-title" data-aos="fade-up">Technical Expertise</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                    Comprehensive skill set covering infrastructure, security, and management domains developed over 13+ years
-                </p>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-6 mb-4" data-aos="fade-right">
-                    <div class="experience-card h-100">
-                        <h3 class="h4 mb-4">Security & Networking</h3>
-                        
-                        <div class="skill-item">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span class="skill-name">Firewall Management (pfSense, Sophos, Mikrotik)</span>
-                                <span><span class="sr-only">Proficiency level</span>96%</span>
-                            </div>
-                            <div class="skill-bar" role="progressbar" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100" aria-label="Firewall Management skill level">
-                                <div class="skill-level" data-width="96%"></div>
-                            </div>
+                <!-- Brightway Consultancy -->
+                <article class="experience-card mb-4" data-aos="fade-up" data-aos-delay="200" itemprop="hasOccupation" itemscope itemtype="http://schema.org/Occupation">
+                    <div class="d-flex justify-content-between align-items-start mb-3 flex-wrap">
+                        <div>
+                            <span class="experience-period">February 2023 – October 2023</span>
+                            <h3 class="h4 mb-2" itemprop="name">IT Officer</h3>
+                            <h4 class="h5 mb-3" itemprop="worksFor">Brightway Consultancy</h4>
                         </div>
-                        
-                        <div class="skill-item">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span class="skill-name">Network Design & Architecture</span>
-                                <span><span class="sr-only">Proficiency level</span>95%</span>
+                    </div>
+                    
+                    <p class="lead mb-3" itemprop="description">
+                        Managed and oversaw the company's network infrastructure, operations, and security and user support functions. Ensured smooth network performance, compliance with security standards, and around-the-clock technical support.
+                    </p>
+                    
+                    <h5 class="h6 mb-3">Key Responsibilities:</h5>
+                    <ul class="list-unstyled" role="list">
+                        <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Managed LAN/WAN networks and network security systems</li>
+                        <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Established network specifications and configurations</li>
+                        <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Conducted training programs and provided user support</li>
+                        <li class="mb-2" role="listitem"><i class="fas fa-angle-right me-2" aria-hidden="true"></i>Provided 24/7 critical support and technical assistance</li>
+                    </ul>
+                    
+                    <button class="btn-details view-details-btn" data-target="brightway-details"
+                            aria-expanded="false" aria-controls="brightway-details">
+                        <i class="fas fa-chevron-down me-2" aria-hidden="true"></i>
+                        <span class="btn-text">View Details</span>
+                    </button>
+                    
+                    <div id="brightway-details" class="experience-details" role="region" aria-live="polite">
+                        <div class="details-content">
+                            <div class="detail-item">
+                                <h5>Network Management & Security</h5>
+                                <ul>
+                                    <li>Managing LAN/WAN networks and network security systems</li>
+                                    <li>Establishing network specifications and configurations</li>
+                                    <li>Securing network access, monitoring, and evaluation</li>
+                                    <li>Upgrading network infrastructure and implementing enhancements</li>
+                                </ul>
                             </div>
-                            <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Network Design & Architecture skill level">
-                                <div class="skill-level" data-width="95%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span class="skill-name">Cisco Switching & Routing</span>
-                                <span><span class="sr-only">Proficiency level</span>94%</span>
-                            </div>
-                            <div class="skill-bar" role="progressbar" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100" aria-label="Cisco Switching & Routing skill level">
-                                <div class="skill-level" data-width="94%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span class="skill-name">Cybersecurity Implementation</span>
-                                <span><span class="sr-only">Proficiency level</span>92%</span>
-                            </div>
-                            <div class="skill-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="Cybersecurity Implementation skill level">
-                                <div class="skill-level" data-width="92%"></div>
+                            
+                            <div class="detail-item">
+                                <h5>User Support & Training</h5>
+                                <ul>
+                                    <li>Conducting training programs and providing user support</li>
+                                    <li>Providing 24/7 critical support and technical assistance</li>
+                                    <li>Surveying and monitoring network operations</li>
+                                    <li>Maintaining inventory and documentation of equipment</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+                </article>
+
+                <!-- DAWIOIL LTD -->
+                <article class="experience-card mb-4" data-aos="fade-up" data-aos-delay="300" itemprop="hasOccupation" itemscope itemtype="http://schema.org/Occupation">
+                    <div class="d-flex justify-content-between align-items-start mb-3 flex-wrap">
+                        <div>
+                            <span class="experience-period">September 2022 – January 2023</span>
+                            <h3 class="h4 mb-2" itemprop="name">IT Consultant</h3>
+                            <h4 class="h5 mb-3" itemprop="worksFor">DAWIOIL LTD</h4>
+                        </div>
+                    </div>
+                    
+                    <p class="lead mb-3" itemprop="description">
+                        Evaluated clients' existing IT infrastructure and provided expert guidance, solutions and support to optimize systems, enhance security, ensure compliance and empower users through strategic technology management, integration and training.
+                    </p>
+                    
+                    <button class="btn-details view-details-btn" data-target="dawioil-details"
+                            aria-expanded="false" aria-controls="dawioil-details">
+                        <i class="fas fa-chevron-down me-2" aria-hidden="true"></i>
+                        <span class="btn-text">View Details</span>
+                    </button>
+                    
+                    <div id="dawioil-details" class="experience-details" role="region" aria-live="polite">
+                        <div class="details-content">
+                            <div class="detail-item">
+                                <h5>Infrastructure Optimization</h5>
+                                <ul>
+                                    <li>Analyzed existing IT infrastructure for optimization opportunities</li>
+                                    <li>Evaluated and optimized Windows infrastructure, focusing on Windows Servers, Active Directory, DNS, and DHCP</li>
+                                    <li>Developed and implemented IT policies to ensure data security and reliability</li>
+                                    <li>Configured firewalls and security tools to enhance system protection</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <h5>Training & Support</h5>
+                                <ul>
+                                    <li>Provided training and support for new software and technology tools to empower staff</li>
+                                    <li>Empowered staff to effectively manage Windows-based systems</li>
+                                    <li>Ensured adherence to industry standards by monitoring and promptly resolving IT issues</li>
+                                    <li>Minimized system downtime through proactive management</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <h5>Consultation & Collaboration</h5>
+                                <ul>
+                                    <li>Collaborated with department heads to define technical requirements</li>
+                                    <li>Aligned technology solutions with organizational objectives</li>
+                                    <li>Kept up to date with emerging technologies and industry trends</li>
+                                    <li>Maintained a forward-thinking approach to Windows Infrastructure management</li>
+                                    <li>Advised on Veeam Backup implementation to strengthen data protection and disaster recovery processes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Straun Pharma -->
+                <article class="experience-card mb-4" data-aos="fade-up" data-aos-delay="400" itemprop="hasOccupation" itemscope itemtype="http://schema.org/Occupation">
+                    <div class="d-flex justify-content-between align-items-start mb-3 flex-wrap">
+                        <div>
+                            <span class="experience-period">March 2022 – August 2022</span>
+                            <h3 class="h4 mb-2" itemprop="name">IT Officer</h3>
+                            <h4 class="h5 mb-3" itemprop="worksFor">Straun Pharma</h4>
+                        </div>
+                    </div>
+                    
+                    <p class="lead mb-3" itemprop="description">
+                        Developed and managed the company's IT training programs to assess skill gaps, design job-specific materials, implement assessments, and ensure employees' continuous development and compliance with IT training standards.
+                    </p>
+                    
+                    <button class="btn-details view-details-btn" data-target="straun-details"
+                            aria-expanded="false" aria-controls="straun-details">
+                        <i class="fas fa-chevron-down me-2" aria-hidden="true"></i>
+                        <span class="btn-text">View Details</span>
+                    </button>
+                    
+                    <div id="straun-details" class="experience-details" role="region" aria-live="polite">
+                        <div class="details-content">
+                            <div class="detail-item">
+                                <h5>Training & Development</h5>
+                                <ul>
+                                    <li>Developed and executed comprehensive IT training programs aligned with company goals</li>
+                                    <li>Conducted needs assessments to identify employees' IT skill gaps</li>
+                                    <li>Collaborated with department heads to design job-specific IT training materials</li>
+                                    <li>Managed the IT performance assessment system, including evaluations and feedback</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <h5>Program Management</h5>
+                                <ul>
+                                    <li>Implemented strategies for IT staff engagement and career growth</li>
+                                    <li>Ensured compliance with legal and regulatory IT training requirements</li>
+                                    <li>Evaluated IT training data to enhance program effectiveness</li>
+                                    <li>Cultivated relationships with IT training providers and associations</li>
+                                    <li>Mentored IT personnel for their professional development</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Previous Roles Summary -->
+                <article class="experience-card" data-aos="fade-up" data-aos-delay="500" itemprop="hasOccupation" itemscope itemtype="http://schema.org/Occupation">
+                    <h3 class="h4 mb-4 text-center">Additional Professional Experience (2012-2021)</h3>
+                    
+                    <div class="details-content">
+                        <div class="detail-item">
+                            <h5>Mashal University</h5>
+                            <p class="mb-2"><strong>CS Lecturer and Head of IT Department</strong> (Oct 2019 – Feb 2021)</p>
+                            <ul>
+                                <li>Provided strategic leadership and management of the IT Department</li>
+                                <li>Set and executed departmental academic strategy in alignment with university goals</li>
+                                <li>Enhanced student experience by overseeing admission, instruction, and examination</li>
+                                <li>Developed new programs to attract students and markets</li>
+                                <li>Uphled research integrity and fostered a progressive research environment</li>
+                                <li>Implemented HR policies and managed staff performance</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h5>Zippy Link</h5>
+                            <p class="mb-2"><strong>IT Manager</strong> (Aug 2019 – Sep 2019)</p>
+                            <ul>
+                                <li>Oversaw core systems operations, infrastructure management and technical support functions</li>
+                                <li>Administered core operating systems, networking, security, and file systems</li>
+                                <li>Ensured impeccable uptime through proactive monitoring and disaster recovery</li>
+                                <li>Managed high-frequency monitoring and enhanced system performance</li>
+                                <li>Deployed servers using scripts, managed instances, and troubleshooter</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h5>Muslim English Language Institute</h5>
+                            <p class="mb-2"><strong>IT Manager</strong> (April 2016 – August 2019)</p>
+                            <ul>
+                                <li>Managed all aspects of IT operations, infrastructure, security and user support</li>
+                                <li>Configured Windows Server 2012 R2, Active Directory, DHCP, DNS, and Windows Server Backup</li>
+                                <li>Implemented and managed Sophos Firewall for network protection</li>
+                                <li>Configured MikroTik routers at branch locations with web filtering and bandwidth control</li>
+                                <li>Collaborated with a development company to create a Management Information System (MIS)</li>
+                                <li>Managed migration of MIS from testing to production environment</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h5>DAWIOIL</h5>
+                            <p class="mb-2"><strong>ICT & ERP Manager</strong> (June 2012 – April 2016)</p>
+                            <ul>
+                                <li>Provided strategic technical leadership and managed all aspects of IT operations</li>
+                                <li>Managed various project phases, including requirements analysis and system testing</li>
+                                <li>Prepared detailed business process execution documents</li>
+                                <li>Installed and configured hardware, operating systems, and applications</li>
+                                <li>Monitored and maintained computer systems and networks, ensuring system availability</li>
+                                <li>Managed user accounts and addressed password-related issues</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </article>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section" aria-labelledby="skills-title">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title" id="skills-title" data-aos="fade-up">Technical Expertise</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        Comprehensive skill set covering infrastructure, security, and management domains developed over 13+ years
+                    </p>
                 </div>
                 
-                <div class="col-lg-6 mb-4" data-aos="fade-left">
-                    <div class="experience-card h-100">
-                        <h3 class="h4 mb-4">Infrastructure & Management</h3>
-                        
-                        <div class="skill-item">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span class="skill-name">Windows Server Administration</span>
-                                <span><span class="sr-only">Proficiency level</span>95%</span>
-                            </div>
-                            <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Windows Server Administration skill level">
-                                <div class="skill-level" data-width="95%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span class="skill-name">Virtualization (Proxmox, Hyper-V, KVM)</span>
-                                <span><span class="sr-only">Proficiency level</span>93%</span>
-                            </div>
-                            <div class="skill-bar" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100" aria-label="Virtualization skill level">
-                                <div class="skill-level" data-width="93%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span class="skill-name">Linux Server Management</span>
-                                <span><span class="sr-only">Proficiency level</span>91%</span>
-                            </div>
-                            <div class="skill-bar" role="progressbar" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" aria-label="Linux Server Management skill level">
-                                <div class="skill-level" data-width="91%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span class="skill-name">Backup & Disaster Recovery (Veeam)</span>
-                                <span><span class="sr-only">Proficiency level</span>90%</span>
-                            </div>
-                            <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Backup & Disaster Recovery skill level">
-                                <div class="skill-level" data-width="90%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Additional Skills -->
-            <div class="row mt-4">
-                <div class="col-12" data-aos="fade-up">
-                    <div class="experience-card">
-                        <h3 class="h4 mb-4">Additional Technical Skills</h3>
-                        <div class="row">
-                            <div class="col-md-4 mb-3">
-                                <h5 class="h6 mb-3">Monitoring Tools</h5>
-                                <div class="d-flex flex-wrap gap-2">
-                                    <span class="badge bg-primary">Zabbix</span>
-                                    <span class="badge bg-primary">ntopng</span>
-                                    <span class="badge bg-primary">Snort</span>
-                                    <span class="badge bg-primary">CrowdSec</span>
+                <div class="row">
+                    <div class="col-lg-6 mb-4" data-aos="fade-right">
+                        <div class="experience-card h-100">
+                            <h3 class="h4 mb-4">Security & Networking</h3>
+                            
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="skill-name">Firewall Management (pfSense, Sophos, Mikrotik)</span>
+                                    <span><span class="sr-only">Proficiency level</span>96%</span>
+                                </div>
+                                <div class="skill-bar" role="progressbar" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100" aria-label="Firewall Management skill level">
+                                    <div class="skill-level" data-width="96%"></div>
                                 </div>
                             </div>
-                            <div class="col-md-4 mb-3">
-                                <h5 class="h6 mb-3">VPN Technologies</h5>
-                                <div class="d-flex flex-wrap gap-2">
-                                    <span class="badge bg-success">OpenVPN</span>
-                                    <span class="badge bg-success">Wireguard</span>
-                                    <span class="badge bg-success">IPsec</span>
-                                    <span class="badge bg-success">Zerotier</span>
+                            
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="skill-name">Network Design & Architecture</span>
+                                    <span><span class="sr-only">Proficiency level</span>95%</span>
+                                </div>
+                                <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Network Design & Architecture skill level">
+                                    <div class="skill-level" data-width="95%"></div>
                                 </div>
                             </div>
-                            <div class="col-md-4 mb-3">
-                                <h5 class="h6 mb-3">Web & ePanel</h5>
-                                <div class="d-flex flex-wrap gap-2">
-                                    <span class="badge bg-info">ePanel/WHM</span>
-                                    <span class="badge bg-info">DNS Management</span>
-                                    <span class="badge bg-info">Web Hosting</span>
-                                    <span class="badge bg-info">SSL Certificates</span>
+                            
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="skill-name">Cisco Switching & Routing</span>
+                                    <span><span class="sr-only">Proficiency level</span>94%</span>
+                                </div>
+                                <div class="skill-bar" role="progressbar" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100" aria-label="Cisco Switching & Routing skill level">
+                                    <div class="skill-level" data-width="94%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="skill-name">Cybersecurity Implementation</span>
+                                    <span><span class="sr-only">Proficiency level</span>92%</span>
+                                </div>
+                                <div class="skill-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="Cybersecurity Implementation skill level">
+                                    <div class="skill-level" data-width="92%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 mb-4" data-aos="fade-left">
+                        <div class="experience-card h-100">
+                            <h3 class="h4 mb-4">Infrastructure & Management</h3>
+                            
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="skill-name">Windows Server Administration</span>
+                                    <span><span class="sr-only">Proficiency level</span>95%</span>
+                                </div>
+                                <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Windows Server Administration skill level">
+                                    <div class="skill-level" data-width="95%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="skill-name">Virtualization (Proxmox, Hyper-V, KVM)</span>
+                                    <span><span class="sr-only">Proficiency level</span>93%</span>
+                                </div>
+                                <div class="skill-bar" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100" aria-label="Virtualization skill level">
+                                    <div class="skill-level" data-width="93%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="skill-name">Linux Server Management</span>
+                                    <span><span class="sr-only">Proficiency level</span>91%</span>
+                                </div>
+                                <div class="skill-bar" role="progressbar" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" aria-label="Linux Server Management skill level">
+                                    <div class="skill-level" data-width="91%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="skill-name">Backup & Disaster Recovery (Veeam)</span>
+                                    <span><span class="sr-only">Proficiency level</span>90%</span>
+                                </div>
+                                <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Backup & Disaster Recovery skill level">
+                                    <div class="skill-level" data-width="90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Skills -->
+                <div class="row mt-4">
+                    <div class="col-12" data-aos="fade-up">
+                        <div class="experience-card">
+                            <h3 class="h4 mb-4">Additional Technical Skills</h3>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <h5 class="h6 mb-3">Monitoring Tools</h5>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge bg-primary">Zabbix</span>
+                                        <span class="badge bg-primary">ntopng</span>
+                                        <span class="badge bg-primary">Snort</span>
+                                        <span class="badge bg-primary">CrowdSec</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <h5 class="h6 mb-3">VPN Technologies</h5>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge bg-success">OpenVPN</span>
+                                        <span class="badge bg-success">Wireguard</span>
+                                        <span class="badge bg-success">IPsec</span>
+                                        <span class="badge bg-success">Zerotier</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <h5 class="h6 mb-3">Web & ePanel</h5>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge bg-info">ePanel/WHM</span>
+                                        <span class="badge bg-info">DNS Management</span>
+                                        <span class="badge bg-info">Web Hosting</span>
+                                        <span class="badge bg-info">SSL Certificates</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section" style="background-color: #0a0e27;" aria-labelledby="projects-title">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title" id="projects-title" data-aos="fade-up">Key Projects</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                    Significant projects demonstrating technical expertise and implementation capabilities
-                </p>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
-                    <article class="experience-card text-center h-100">
-                        <div class="contact-icon mx-auto mb-3" aria-hidden="true">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h4 class="h5 mb-3">Electronic Money Institution Security</h4>
-                        <p class="small">Implemented comprehensive security framework for EMI project with pfSense firewall, AdGuard Home, and financial transaction security measures.</p>
-                    </article>
+        <!-- Projects Section -->
+        <section id="projects" class="section" style="background-color: #0a0e27;" aria-labelledby="projects-title">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title" id="projects-title" data-aos="fade-up">Key Projects</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        Significant projects demonstrating technical expertise and implementation capabilities
+                    </p>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
-                    <article class="experience-card text-center h-100">
-                        <div class="contact-icon mx-auto mb-3" aria-hidden="true">
-                            <i class="fas fa-network-wired"></i>
-                        </div>
-                        <h4 class="h5 mb-3">Educational Complex Infrastructure</h4>
-                        <p class="small">Designed and deployed complete IT infrastructure for Moraa Educational Complex with Proxmox virtualization, network security, and monitoring systems.</p>
-                    </article>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
-                    <article class="experience-card text-center h-100">
-                        <div class="contact-icon mx-auto mb-3" aria-hidden="true">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <h4 class="h5 mb-3">MELI MIS Project</h4>
-                        <p class="small">Developed Odoo-based Management Information System for Muslim English Language Institute with custom features and staff training.</p>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section" aria-labelledby="contact-title">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title" id="contact-title" data-aos="fade-up">Contact Me</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                    Available for senior IT infrastructure and cybersecurity opportunities
-                </p>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-4 mb-4" data-aos="flip-left" data-aos-delay="100">
-                    <div class="contact-item">
-                        <div class="contact-icon" aria-hidden="true">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h4 class="h5 mb-3">Email</h4>
-                        <address>
-                            <p class="mb-1">asar23@gmail.com</p>
-                            <p>asarkhan447@gmail.com</p>
-                        </address>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                        <article class="experience-card text-center h-100">
+                            <div class="contact-icon mx-auto mb-3" aria-hidden="true">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4 class="h5 mb-3">Electronic Money Institution Security</h4>
+                            <p class="small">Implemented comprehensive security framework for EMI project with pfSense firewall, AdGuard Home, and financial transaction security measures.</p>
+                        </article>
                     </div>
+                    <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                        <article class="experience-card text-center h-100">
+                            <div class="contact-icon mx-auto mb-3" aria-hidden="true">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h4 class="h5 mb-3">Educational Complex Infrastructure</h4>
+                            <p class="small">Designed and deployed complete IT infrastructure for Moraa Educational Complex with Proxmox virtualization, network security, and monitoring systems.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                        <article class="experience-card text-center h-100">
+                            <div class="contact-icon mx-auto mb-3" aria-hidden="true">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h4 class="h5 mb-3">MELI MIS Project</h4>
+                            <p class="small">Developed Odoo-based Management Information System for Muslim English Language Institute with custom features and staff training.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title" id="contact-title" data-aos="fade-up">Contact Me</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        Available for senior IT infrastructure and cybersecurity opportunities
+                    </p>
                 </div>
                 
-                <div class="col-lg-4 mb-4" data-aos="flip-left" data-aos-delay="200">
-                    <div class="contact-item">
-                        <div class="contact-icon" aria-hidden="true">
-                            <i class="fas fa-phone"></i>
+                <div class="row">
+                    <div class="col-lg-4 mb-4" data-aos="flip-left" data-aos-delay="100">
+                        <div class="contact-item">
+                            <div class="contact-icon" aria-hidden="true">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h4 class="h5 mb-3">Email</h4>
+                            <address>
+                                <p class="mb-1">asar23@gmail.com</p>
+                                <p>asarkhan447@gmail.com</p>
+                            </address>
                         </div>
-                        <h4 class="h5 mb-3">Phone</h4>
-                        <address>
-                            <p class="mb-1">+93 731 826 346</p>
-                            <p>+93 799 588 319</p>
-                        </address>
+                    </div>
+                    
+                    <div class="col-lg-4 mb-4" data-aos="flip-left" data-aos-delay="200">
+                        <div class="contact-item">
+                            <div class="contact-icon" aria-hidden="true">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h4 class="h5 mb-3">Phone</h4>
+                            <address>
+                                <p class="mb-1">+93 731 826 346</p>
+                                <p>+93 799 588 319</p>
+                            </address>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 mb-4" data-aos="flip-left" data-aos-delay="300">
+                        <div class="contact-item">
+                            <div class="contact-icon" aria-hidden="true">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h4 class="h5 mb-3">Location</h4>
+                            <address>
+                                <p class="mb-1">Benissar, Kabul</p>
+                                <p>Afghanistan</p>
+                            </address>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="col-lg-4 mb-4" data-aos="flip-left" data-aos-delay="300">
-                    <div class="contact-item">
-                        <div class="contact-icon" aria-hidden="true">
-                            <i class="fas fa-map-marker-alt"></i>
+
+                <!-- Contact Form -->
+                <div class="row mt-5">
+                    <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                        <div class="contact-form">
+                            <h3 class="h4 mb-4 text-center">Send Me a Message</h3>
+                            <form id="contactForm" novalidate>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="name" class="form-label">Name *</label>
+                                        <input type="text" class="form-control" id="name" name="name" required>
+                                        <div class="invalid-feedback">
+                                            Please enter your name.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label">Email *</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                        <div class="invalid-feedback">
+                                            Please enter a valid email address.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject *</label>
+                                    <input type="text" class="form-control" id="subject" name="subject" required>
+                                    <div class="invalid-feedback">
+                                        Please enter a subject.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message *</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                    <div class="invalid-feedback">
+                                        Please enter your message.
+                                    </div>
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn-custom btn-primary-custom">
+                                        <i class="fas fa-paper-plane me-2"></i>Send Message
+                                    </button>
+                                </div>
+                                <div id="formMessage" class="mt-3" style="display: none;"></div>
+                            </form>
                         </div>
-                        <h4 class="h5 mb-3">Location</h4>
-                        <address>
-                            <p class="mb-1">Benissar, Kabul</p>
-                            <p>Afghanistan</p>
-                        </address>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer role="contentinfo">
@@ -1551,7 +1869,7 @@
             </div>
             
             <div class="text-center pt-4 mt-4 border-top border-secondary">
-                <p class="mb-0">© 2024 Asar Khan. All Rights Reserved.</p>
+                <p class="mb-0">© <span id="currentYear">2024</span> Asar Khan. All Rights Reserved.</p>
                 <p class="small mt-2">13+ Years of IT Infrastructure & Cybersecurity Experience</p>
             </div>
         </div>
@@ -1579,12 +1897,52 @@
             AOS.init({
                 duration: 1000,
                 once: true,
-                disable: window.innerWidth < 768 ? true : false // Disable on mobile for performance
+                disable: window.innerWidth < 768 ? true : false
             });
         } catch (error) {
             console.warn('AOS initialization failed:', error);
-            // Fallback: Add a class to indicate AOS failed
             document.body.classList.add('aos-failed');
+        }
+
+        // Theme Toggle Functionality
+        function setupThemeToggle() {
+            const themeToggle = document.querySelector('.theme-toggle');
+            const htmlElement = document.documentElement;
+            
+            // Check for saved theme or prefer-color-scheme
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (savedTheme) {
+                htmlElement.setAttribute('data-theme', savedTheme);
+            } else if (prefersDark) {
+                htmlElement.setAttribute('data-theme', 'dark');
+            }
+            
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                htmlElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                // Announce theme change for screen readers
+                const announcement = document.createElement('div');
+                announcement.setAttribute('aria-live', 'polite');
+                announcement.setAttribute('aria-atomic', 'true');
+                announcement.classList.add('sr-only');
+                announcement.textContent = `Switched to ${newTheme} theme`;
+                document.body.appendChild(announcement);
+                setTimeout(() => announcement.remove(), 1000);
+            });
+            
+            // Add keyboard support
+            themeToggle.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    themeToggle.click();
+                }
+            });
         }
 
         // Navbar scroll effect
@@ -1637,7 +1995,7 @@
         // Active link highlighting with error handling
         function setupActiveLinks() {
             try {
-                const sections = document.querySelectorAll('section');
+                const sections = document.querySelectorAll('section, article#experience');
                 const navLi = document.querySelectorAll('.navbar .nav-link');
 
                 window.addEventListener('scroll', () => {
@@ -1751,7 +2109,7 @@
                 document.querySelectorAll('img').forEach(img => {
                     img.addEventListener('error', function() {
                         if (!this.hasAttribute('data-fallback-set')) {
-                            const fallbackSrc = 'https://via.placeholder.com/400x400/0a0e27/00d4ff?text=AK';
+                            const fallbackSrc = 'https://via.placeholder.com/400x400/0a0e27/00d4ff?text=AK+Profile';
                             this.src = fallbackSrc;
                             this.setAttribute('data-fallback-set', 'true');
                             this.alt = 'Profile image not available';
@@ -1772,7 +2130,7 @@
                 const observerOptions = {
                     root: null,
                     rootMargin: '0px',
-                    threshold: 0.3 // Trigger when 30% of the element is visible
+                    threshold: 0.3
                 };
 
                 const observer = new IntersectionObserver((entries) => {
@@ -1782,7 +2140,7 @@
                             const width = skillLevel.getAttribute('data-width');
                             skillLevel.style.setProperty('--target-width', width);
                             skillLevel.classList.add('animated');
-                            observer.unobserve(skillLevel); // Stop observing once animated
+                            observer.unobserve(skillLevel);
                         }
                     });
                 }, observerOptions);
@@ -1802,7 +2160,6 @@
                 }
             } catch (error) {
                 console.warn('Skill animation setup failed:', error);
-                // Fallback: animate all skill bars immediately
                 document.querySelectorAll('.skill-level').forEach(skillLevel => {
                     const width = skillLevel.getAttribute('data-width');
                     skillLevel.style.width = width;
@@ -1811,14 +2168,88 @@
             }
         }
 
+        // Contact Form Handling
+        function setupContactForm() {
+            const contactForm = document.getElementById('contactForm');
+            if (!contactForm) return;
+
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (!this.checkValidity()) {
+                    e.stopPropagation();
+                    this.classList.add('was-validated');
+                    return;
+                }
+
+                // Get form data
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value
+                };
+
+                // Show loading state
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+                submitBtn.disabled = true;
+
+                // Simulate form submission (replace with actual API call)
+                setTimeout(() => {
+                    // Show success message
+                    const messageDiv = document.getElementById('formMessage');
+                    messageDiv.innerHTML = `
+                        <div class="alert alert-success">
+                            <i class="fas fa-check-circle me-2"></i>
+                            Thank you for your message! I'll get back to you soon.
+                        </div>
+                    `;
+                    messageDiv.style.display = 'block';
+
+                    // Reset form
+                    contactForm.reset();
+                    contactForm.classList.remove('was-validated');
+                    
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+
+                    // Scroll to message
+                    messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+                    // Hide message after 5 seconds
+                    setTimeout(() => {
+                        messageDiv.style.display = 'none';
+                    }, 5000);
+                }, 1500);
+            });
+
+            // Real-time validation
+            contactForm.querySelectorAll('.form-control').forEach(input => {
+                input.addEventListener('input', function() {
+                    if (this.checkValidity()) {
+                        this.classList.remove('is-invalid');
+                        this.classList.add('is-valid');
+                    } else {
+                        this.classList.remove('is-valid');
+                        this.classList.add('is-invalid');
+                    }
+                });
+            });
+        }
+
         // Load all functions when DOM is ready
         document.addEventListener('DOMContentLoaded', function() {
             try {
+                setupThemeToggle();
                 setupSmoothScrolling();
                 setupActiveLinks();
                 setupDetailsButtons();
                 setupImageFallbacks();
                 setupSkillAnimations();
+                setupContactForm();
                 
                 // Add loading state management
                 document.body.classList.remove('loading');
@@ -1830,6 +2261,12 @@
                     btn.setAttribute('aria-controls', targetId);
                 });
                 
+                // Set current year in footer
+                const yearSpan = document.getElementById('currentYear');
+                if (yearSpan) {
+                    yearSpan.textContent = new Date().getFullYear();
+                }
+                
             } catch (error) {
                 console.error('Initialization error:', error);
             }
@@ -1840,7 +2277,6 @@
         window.addEventListener('resize', function() {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(function() {
-                // Reinitialize AOS on resize if needed
                 if (typeof AOS !== 'undefined') {
                     AOS.refresh();
                 }
@@ -1855,106 +2291,6 @@
                 }
             }, 500);
         });
-    </script>
-
-    <!-- Improved Service Worker script -->
-    <script>
-        // Create a simple service worker if supported
-        if ('serviceWorker' in navigator) {
-            const swContent = `
-                const CACHE_NAME = 'portfolio-cache-v1';
-                const urlsToCache = [
-                    '/',
-                    '/index.html',
-                    'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css',
-                    'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap',
-                    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
-                    'https://raw.githubusercontent.com/asar23314/portfolio/main/unnamed%20(3).jpg'
-                ];
-
-                self.addEventListener('install', (event) => {
-                    console.log('Service Worker installing.');
-                    event.waitUntil(
-                        caches.open(CACHE_NAME)
-                            .then((cache) => {
-                                return cache.addAll(urlsToCache);
-                            })
-                    );
-                    self.skipWaiting();
-                });
-
-                self.addEventListener('activate', (event) => {
-                    console.log('Service Worker activating.');
-                    event.waitUntil(
-                        caches.keys().then((cacheNames) => {
-                            return Promise.all(
-                                cacheNames.map((cacheName) => {
-                                    if (cacheName !== CACHE_NAME) {
-                                        console.log('Deleting old cache:', cacheName);
-                                        return caches.delete(cacheName);
-                                    }
-                                })
-                            );
-                        })
-                    );
-                    return self.clients.claim();
-                });
-
-                self.addEventListener('fetch', (event) => {
-                    // Network-first strategy for dynamic content
-                    if (event.request.url.includes('api') || event.request.method !== 'GET') {
-                        return;
-                    }
-                    
-                    event.respondWith(
-                        caches.match(event.request).then((response) => {
-                            // Return cached version if available
-                            if (response) {
-                                return response;
-                            }
-                            
-                            // Otherwise fetch from network
-                            return fetch(event.request).then((response) => {
-                                // Don't cache if not a valid response
-                                if (!response || response.status !== 200 || response.type !== 'basic') {
-                                    return response;
-                                }
-                                
-                                // Clone the response
-                                const responseToCache = response.clone();
-                                
-                                caches.open(CACHE_NAME).then((cache) => {
-                                    cache.put(event.request, responseToCache);
-                                });
-                                
-                                return response;
-                            });
-                        }).catch(() => {
-                            // Fallback for offline
-                            return new Response('You are offline. Please check your connection.');
-                        })
-                    );
-                });
-            `;
-
-            // Register the service worker
-            window.addEventListener('load', () => {
-                try {
-                    const blob = new Blob([swContent], { type: 'application/javascript' });
-                    const swURL = URL.createObjectURL(blob);
-                    
-                    navigator.serviceWorker.register(swURL)
-                        .then(registration => {
-                            console.log('Service Worker registered with scope:', registration.scope);
-                        })
-                        .catch(error => {
-                            console.log('Service Worker registration failed:', error);
-                        });
-                } catch (error) {
-                    console.log('Service Worker setup failed:', error);
-                }
-            });
-        }
     </script>
 </body>
 </html>
